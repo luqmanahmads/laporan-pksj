@@ -1,6 +1,3 @@
-Laporan Dokumnetasi Tugas 1 Uji Penetrasi
-========================
-
 # Pendahuluan
 
 Kebutuhan informasi telah mendorong lahirnya internet sebagai teknologi pertukaran informasi tanpa barir jarak dan waktu.
