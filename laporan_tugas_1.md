@@ -1,48 +1,48 @@
-#Pendahuluan
+# Pendahuluan
 
 Kebutuhan informasi telah mendorong lahirnya internet sebagai teknologi pertukaran informasi tanpa barir jarak dan waktu.
 Dengan adanya internet, informasi dapat berpindah dari suatu tempat ke tempat lain dalam hitungan mili detik. Tanpa biaya pengiriman dan hampir tanpa effort. Akibat kemudahan yang ditawarkan, internet telah menjadi teknologi yang diandalkan bahkan untuk 
 
-#Dasar Teori
+# Dasar Teori
 
-##Virtual Box
-
-
-
-##SSH Server
+## Virtual Box
 
 
 
-##UUbuntu Server 17.10 
+## SSH Server
 
 
 
-##Kali Linux OS
+## UUbuntu Server 17.10 
 
 
 
-##THC-Hydra
+## Kali Linux OS
 
 
 
-##Ncrack
+## Hydra
 
 
 
-#Hasil Uji Penetrasi 1
+## Ncrack
 
 
 
-##Langkah Instalasi Ubuntu Server
+# Hasil Uji Penetrasi 1
 
 
 
-##Langkah instalasi OS untuk Penetrasi
+## Langkah Instalasi Ubuntu Server
 
 
-##Langkah Instalasi SSH Server
+
+## Langkah instalasi OS untuk Penetrasi
+
+
+## Langkah Instalasi SSH Server
 
 - Lakukan ssh remote login untuk mengetes apakah apakah ssh server sudah berjalan
 
 
-##Langkah Uji Penetrasi dengan SSH Brute Force Tools
+## Langkah Uji Penetrasi dengan SSH Brute Force Tools
