@@ -13,20 +13,29 @@ Pada tugas kali ini, kami akan mengamati celah kemananan mekanisme authenticatio
 
 VirtualBox merupakan perangkat lunak virtualisasi sistem operasi. Perangkat lunak ini dapat mengeksekusi sistem operasi di suatu sistem operasi utama. Dengan VirtualBox, kita dapat menajalankan sistem operasi linux meskipun komputer yang digunakan menggunakan sistem operasi windows. VirtualBox berguna untuk melakukan simulasi tanpa perlu kehilangan sistem yang ada.
 
-Pada pengamatan kali ini, kami menggunakan VirtualBox untuk melakukan virtualisasi sistem operasi berikut.
+Pada pengamatan ini, kami menggunakan VirtualBox untuk melakukan virtualisasi sistem operasi berikut.
 - Ubuntu Server 17.10, sebagai SSH server
 - Kali Linux 2017.2, sebagai client yang akan melakukan penetrasi
+
 Dengan VirtualBox, Ubuntu Server 17.10 dan Kali Linux 2017.2 dapat berjalan bersamaan pada komputer yang sama.
 
-## SSH Server
+## SSH (Secure Shell )
 
-SSH
+SSH adalah protokol komukasi jaringan yang aman. SSH menyediakan secure channel diatas komunikasi jaringan client-server yang tidak aman. Infromasi yang melalui SSH akan didistribusikan dalam keadaan terenkripsi. Penggunaan SSH biasanya terdapat pada remote login atau remote command execution.
+
+Pada pengamatan ini, kami menggunakan OpenSSH sebagai objek penetrasi. 
 
 ## Ubuntu Server 17.10 
 
-## Kali Linux OS
+Ubuntu Server 17.10 merupakan sistem operasi server berbasis Linux. Ubuntu Server berperan sebagai tempat berjalanya SSH Server, OpenSSH.
+
+## Kali Linux 2017.2
+
+Kali Linux merupakan sistem operasi turunan Debian berbasis Linux. Kali Linux memiliki lebih dari 600 penetration testing program, diantaranya Hydra dan Ncrack. Kali Linux berperan sebagai client yang akan melakukan penetrasi ke Ubuntu Server.
 
 ## Hydra
+
+
 
 ## Ncrack
 
