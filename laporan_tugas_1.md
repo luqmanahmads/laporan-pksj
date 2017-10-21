@@ -35,7 +35,7 @@ Kali Linux merupakan sistem operasi turunan Debian berbasis Linux. Kali Linux me
 
 ## Hydra dan Ncrack
 
-Hydra dan Ncrack merupakan program login cracker yang men-support beragam protokol untuk diserang, termasuk SSH. Program ini bekerja secara brute force dengan mencoba segala kemungkinan kombinasi karakter. Program ini juga mensupport dictionary attack, yakni mencoba kemungkinan password dari daftar yang disediakan. 
+Hydra dan Ncrack merupakan program login cracker yang men-support beragam protokol untuk diserang, termasuk SSH. Program ini bekerja secara brute force dengan mencoba segala kemungkinan kombinasi karakter. Pada pengamatan ini, kami akan melakukan dictionary attack, yakni mencoba kemungkinan password dari daftar yang disediakan, menggunakan Hydra dan Ncrack.
 
 # Hasil Uji Penetrasi 1
 
