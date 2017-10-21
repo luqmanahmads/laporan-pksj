@@ -9,9 +9,18 @@ Pada tugas kali ini, kami akan mengamati celah kemananan mekanisme authenticatio
 
 # Dasar Teori
 
-## Virtual Box
+## VirtualBox
+
+VirtualBox merupakan perangkat lunak virtualisasi sistem operasi. Perangkat lunak ini dapat mengeksekusi sistem operasi di suatu sistem operasi utama. Dengan VirtualBox, kita dapat menajalankan sistem operasi linux meskipun komputer yang digunakan menggunakan sistem operasi windows. VirtualBox berguna untuk melakukan simulasi tanpa perlu kehilangan sistem yang ada.
+
+Pada pengamatan kali ini, kami menggunakan VirtualBox untuk melakukan virtualisasi sistem operasi berikut.
+- Ubuntu Server 17.10, sebagai SSH server
+- Kali Linux 2017.2, sebagai client yang akan melakukan penetrasi
+Dengan VirtualBox, Ubuntu Server 17.10 dan Kali Linux 2017.2 dapat berjalan bersamaan pada komputer yang sama.
 
 ## SSH Server
+
+SSH
 
 ## Ubuntu Server 17.10 
 
