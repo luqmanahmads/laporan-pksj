@@ -23,6 +23,11 @@ Pada tugas kali ini, kami akan mengamati celah kemananan mekanisme authenticatio
 
 # Hasil Uji Penetrasi 1
 
+Sebelum kita melakukan uji penetrasi, terlebih dahulu kita harus menyiapkan tools yang diperlukan
+> - Virtualbox, bisa didownload di *www.virtualbox.org/wiki/Downloads*. Pilih yang bagian *Windows hosts*
+> - Ubuntu Server, bisa didownload di *www.ubuntu.com/download/server*. Pilih yang versi *Ubuntu Server 17.10*
+> - Kali Linux, bisa didownload di *www.kali.org/downloads/*. Pilih *Kali 64 bit* dengan menggunakan *HTTP*
+
 ## Langkah Instalasi Ubuntu Server
 
 ## Langkah instalasi OS untuk Penetrasi
