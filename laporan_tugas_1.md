@@ -33,11 +33,9 @@ Ubuntu Server 17.10 merupakan sistem operasi server berbasis Linux. Ubuntu Serve
 
 Kali Linux merupakan sistem operasi turunan Debian berbasis Linux. Kali Linux memiliki lebih dari 600 penetration testing program, diantaranya Hydra dan Ncrack. Kali Linux berperan sebagai client yang akan melakukan penetrasi ke Ubuntu Server.
 
-## Hydra
+## Hydra dan Ncrack
 
-
-
-## Ncrack
+Hydra dan Ncrack merupakan program login cracker yang men-support beragam protokol untuk diserang, termasuk SSH. Program ini bekerja secara brute force dengan mencoba segala kemungkinan kombinasi karakter. Program ini juga mensupport dictionary attack, yakni mencoba kemungkinan password dari daftar yang disediakan. 
 
 # Hasil Uji Penetrasi 1
 
