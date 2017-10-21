@@ -30,7 +30,25 @@ Sebelum kita melakukan uji penetrasi, terlebih dahulu kita harus menyiapkan tool
 
 ## Langkah Instalasi Ubuntu Server
 
-## Langkah instalasi OS untuk Penetrasi
+Setelah kita menginstall VirtualBox, langkah selanjutnya adalah menyiapkan environment untuk Ubuntu Server
+> - Buka Virtualbox, kemudian pilih **New**
+> - Masukkan nama OS, Pilih type **Linux**, Pilih version **Ubuntu (64-bit)**
+> - Set memory size **1024 MB**
+> - Pilih opsi **Create a virtual hardisk now**
+> - Pilih opsi **VHD (Virtual Hard Disk)**
+> - Pilih opsi **Dynamically allocated**
+> - Set alokasi disk minimal **10 GB** sesuai rekomendasi
+> - Pilih **create**
+
+Setelah kita menset-up environment, maka kita akan melakukan instalasi Ubuntu Server
+> - Klik kanan pada virtual mesin yang sudah kita buat sebelumnya
+> - Pilih **Start** kemudian **Normal Start**
+> - Pada menu Select start-up disk pilih disk Ubuntu Server yang sudah kita download tadi, kemudain Pilih **Start**
+> - Lakukan Instalasi Ubuntu Server yang pada umumnya
+
+## Langkah Instalasi OS untuk Penetrasi
+
+Sebelum kita menginstall Kali Linux
 
 ## Langkah Instalasi SSH Server
 
