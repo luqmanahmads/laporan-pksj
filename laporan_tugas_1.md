@@ -136,12 +136,12 @@ Medusa
 - Maka perintah yang dimasukkan : `medusa -u hendri -P passlist.txt -h 10.151.32.4 -M ssh`
 
 **Hasil Uji Penetrasi 1**
-- Ketiga aplikasi tersebut berhasil dalam melakukan brute force attack dengan mencoba semua kemungkinan password yang ada.
-- Dari ketiga aplikasi tersebut, **Hydra** paling cepat dalam menemukan hasil pencarian kemudian disusul oleh **Ncrack** dan terakhir **Medusa**
+1. Ketiga aplikasi tersebut berhasil dalam melakukan brute force attack dengan mencoba semua kemungkinan password yang ada.
+2. Dari ketiga aplikasi tersebut, **Hydra** paling cepat dalam menemukan hasil pencarian kemudian disusul oleh **Ncrack** dan terakhir **Medusa**
 
 **Uji Penetrasi 2**
 
-Install terlebih dahulu **file2ban** pada Ubuntu Server
+Lakukan instalasi terlebih dahulu **file2ban** pada Ubuntu Server
 - Masuk keterminal pada Ubuntu Server
 - Ketikkan `sudo apt-get update`
 - Ketikkan `sudo apt-get install fail2ban`
@@ -149,7 +149,8 @@ Install terlebih dahulu **file2ban** pada Ubuntu Server
 Konfigurasi fail2ban
 - Atur konfigurasi di /etc/fail2ban/jail.conf
 - Tambahkan beberapa baris dibawah berikut :
-``` enable = true
+``` 
+	enable = true
  	port = ssh
  	filter = sshd
  	logpath = /var/log/auth.log
@@ -168,6 +169,6 @@ Medusa
 - Masukkan perintah : `medusa -u hendri -P passlist.txt -h 10.151.32.4 -M ssh`
 
 **Hasil Uji Penetrasi 2**
-- Ketiga aplikasi tersebut tidak pada saat melakukan percobaan ke tujuh karena mengalami connection refuse sehingga, gagal dalam melakukan brute force attack
-- Setelah melakukan percobaan 6 kali dan gagal, maka otomatis server akan **mem-banned** ip yang berusaha untuk mengakses server tersebut selama 2 menit
-- Hasil percobaan untuk melakukan brute force attack dapat dilihat di `**/var/log/auth.log**`
+1. Ketiga aplikasi tersebut tidak pada saat melakukan percobaan ke tujuh karena mengalami connection refuse sehingga, gagal dalam melakukan brute force attack
+2. Setelah melakukan percobaan 6 kali dan gagal, maka otomatis server akan **mem-banned** ip yang berusaha untuk mengakses server tersebut selama 2 menit
+3. Hasil percobaan untuk melakukan brute force attack dapat dilihat di `**/var/log/auth.log**`
