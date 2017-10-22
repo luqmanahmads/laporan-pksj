@@ -56,7 +56,7 @@ Setelah kita menginstall VirtualBox, langkah selanjutnya adalah menyiapkan envir
 - Set alokasi disk minimal **10 GB** sesuai rekomendasi
 - Pilih **create**
 
-Setelah kita menset-up environment, maka kita akan melakukan instalasi Ubuntu Server
+Setelah kita men-setup environment, maka kita akan melakukan instalasi Ubuntu Server
 - Klik kanan pada virtual mesin yang sudah kita buat sebelumnya
 - Pilih **Start**, kemudian pilih **Normal Start**
 - Pada menu Select start-up disk pilih disk Ubuntu Server yang sudah kita download tadi, kemudain Pilih **Start**
@@ -81,30 +81,64 @@ Langkah selanjutnya adalah mengintalasi kali linux pada virtual mesin
 - Klik kanan pada virtual mesin yang sudah kita buat sebelumnya
 - Pilih **Start**, kemudian pilih **Normal Start**
 - Pada menu Select start-up disk pilih disk Kali Linux yang sudah kita download tadi, kemudain Pilih **Start**
-- Lakukan Instalasi Kali Linux pada umumnya, anda bisa memilih **Graphical install** untuk lebih memudahkan dalam proses penginstallan
+- Lakukan Instalasi Kali Linux pada umumnya, kita bisa memilih opsi **Graphical install** untuk lebih memudahkan dalam proses penginstallan
 
 ## Setting NAT pada Virtualbox
 
-Agar kedua device dapat saling terhubung dan dapat terkoneksi dengan internet maka kita harus menset-up NAT pada kedua device tersebut. Setelah kita menset-up NAT, maka kita tidak perlu lagi mengkonfigurasikan ip address pada kedua device tersebut. Berikut ini adalah langkah - langkahnya.
+Agar kedua device dapat saling terhubung dan dapat terkoneksi dengan internet maka kita harus men-setup NAT pada kedua device tersebut. Setelah kita men-setup NAT, maka kita tidak perlu lagi mengkonfigurasikan ip address pada kedua device tersebut. Berikut ini adalah langkah - langkahnya.
 
-Membuat NAT
-> - Buka Virtualbox, Klik **File**, kemudian pilih **Preferences**
-> - Pilih **Network**, kemudian tambahkan NAT network dengan mengklik **icon** yang bertanda **Plus** pada sisi kanan
-> - Setelah ditambahkan, kemudian edit NAT tersebut. Pada bagian Network name anda bisa merubah nama NAT sesuai keinginan.
-> - Pada bagian **Network CIDR** isikan sesuai koneksi jaringan dimana anda terhubung. Sebagai contoh **10.151.32.0/24**
-> - Centang pada bagian **Supports DHCP** agar pembagian ip bersifat dinamis
-> - Klik **OK**
+**Membuat NAT**
+- Buka Virtualbox, Klik **File**, kemudian pilih **Preferences**
+- Pilih **Network**, kemudian tambahkan NAT network dengan mengklik **icon** yang bertanda **Plus** pada sisi kanan
+- Setelah ditambahkan, kemudian edit NAT tersebut. Pada bagian Network name anda bisa merubah nama NAT sesuai keinginan.
+- Pada bagian **Network CIDR** isikan sesuai koneksi jaringan dimana anda terhubung. Sebagai contoh **10.151.32.0/24**
+- Centang pada bagian **Supports DHCP** agar pembagian ip bersifat dinamis
+- Klik **OK**
 
-Mensetup NAT pada Device
-> - Klik kanan pada virtual mesin
-> - Pilih bagian **Network**
-> - Pilih **Adapter 1**, kemudian centang pada bagian **Enable Network Adapter**.
-> - Pada bagian Attached to pilih **NAT Network**. Kemudian pilih NAT yang sudah kita buat tadi.
-> - Klik **OK**
+**Men-setup NAT pada Device**
+- Klik kanan pada virtual mesin
+- Pilih bagian **Network**
+- Pilih **Adapter 1**, kemudian centang pada bagian **Enable Network Adapter**.
+- Pada bagian Attached to pilih **NAT Network**. Kemudian pilih NAT yang sudah kita buat tadi.
+- Klik **OK**
 
 **Catatan**
-> - Lakukan langkah untuk mensetup NAT pada kedua device
+> - Lakukan langkah untuk men-setup NAT pada kedua device
 
 ## Langkah Instalasi SSH Server
 
+Dikarenakan kita sudah menginstall SSH Server diawal maka kita tidak perlu melakukan langkah ini. Akan tetapi, jika kita lupa untuk mencentang **OpenSSH Server** pada saat instalasi Ubuntu Server maka kita harus melakukan instalasi secara manual.
+
+- Masuk keterminal pada Ubuntu Server
+- Ketikkan `sudo apt-get update`
+- Ketikkan `sudo apt-get install openssh-server`
+
 ## Langkah Uji Penetrasi dengan SSH Brute Force Tools
+
+Kita tidak perlu untuk menginstall tools untuk penetrasi, karena di Kali Linux tools tersebut semuanya sudah lengkap terinstall.
+Sebelum kita memulai ujicoba, siapkan terlebih dahulu kumpulan list kemungkinan password. Disini kami meletakkan kumpulan password tersebut pada file **passlist.txt**
+
+Uji Penetrasi 1
+
+Hydra
+
+Ncrack
+
+Medusa
+
+Uji Penetrasi 2
+
+Install terlebih dahulu **file2ban** pada Ubuntu Server
+- Masuk keterminal pada Ubuntu Server
+- Ketikkan `sudo apt-get update`
+- Ketikkan `sudo apt-get install fail2ban`
+
+Konfigurasi fail2ban
+- Atur konfigurasi di /etc/fail2ban/jail.conf
+- 
+
+Hydra
+
+Ncrack
+
+Medusa
