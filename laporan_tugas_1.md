@@ -47,20 +47,20 @@ Sebelum kita melakukan uji penetrasi, terlebih dahulu kita harus menyiapkan tool
 ## Langkah Instalasi Ubuntu Server
 
 Setelah kita menginstall VirtualBox, langkah selanjutnya adalah menyiapkan environment untuk Ubuntu Server
-- Buka Virtualbox, kemudian pilih **New**
-- Masukkan nama OS, Pilih type **Linux**, Pilih version **Ubuntu (64-bit)**
-- Set memory size minimal **1024 MB**
-- Pilih opsi **Create a virtual hardisk now**
-- Pilih opsi **VHD (Virtual Hard Disk)**
-- Pilih opsi **Dynamically allocated**
-- Set alokasi disk minimal **10 GB** sesuai rekomendasi
-- Pilih **create**
+1. Buka Virtualbox, kemudian pilih **New**
+2. Masukkan nama OS, Pilih type **Linux**, Pilih version **Ubuntu (64-bit)**
+3. Set memory size minimal **1024 MB**
+4. Pilih opsi **Create a virtual hardisk now**
+5. Pilih opsi **VHD (Virtual Hard Disk)**
+6. Pilih opsi **Dynamically allocated**
+7. Set alokasi disk minimal **10 GB** sesuai rekomendasi
+8. Pilih **create**
 
 Setelah kita men-setup environment, maka kita akan melakukan instalasi Ubuntu Server
-- Klik kanan pada virtual mesin yang sudah kita buat sebelumnya
-- Pilih **Start**, kemudian pilih **Normal Start**
-- Pada menu Select start-up disk pilih disk Ubuntu Server yang sudah kita download tadi, kemudain Pilih **Start**
-- Lakukan Instalasi Ubuntu Server pada umumnya
+1. Klik kanan pada virtual mesin yang sudah kita buat sebelumnya
+2. Pilih **Start**, kemudian pilih **Normal Start**
+3. Pada menu Select start-up disk pilih disk Ubuntu Server yang sudah kita download tadi, kemudain Pilih **Start**
+4. Lakukan Instalasi Ubuntu Server pada umumnya
 
 **Catatan**
 > - Jangan lupa untuk mencentang **OpenSSH Server** ketika menu dialog box **Software selection** muncul, agar aplikasi tersebut otomatis terinstall pada Ubuntu Server
@@ -68,39 +68,39 @@ Setelah kita men-setup environment, maka kita akan melakukan instalasi Ubuntu Se
 ## Langkah Instalasi OS untuk Penetrasi
 
 Sebelum kita menginstall Kali Linux, terlebih dahulu kita harus menyiapkan environment sama seperti sebelumnya
-- Buka Virtualbox, kemudian pilih **New**
-- Masukkan nama OS, Pilih type **Debian**, Pilih version **Debian (64-bit)**
-- Set memory size minimal **1024 MB**
-- Pilih opsi **Create a virtual hardisk now**
-- Pilih opsi **VHD (Virtual Hard Disk)**
-- Pilih opsi **Dynamically allocated**
-- Set alokasi disk minimal **20 GB** sesuai rekomendasi
-- Pilih **create**
+1. Buka Virtualbox, kemudian pilih **New**
+2. Masukkan nama OS, Pilih type **Debian**, Pilih version **Debian (64-bit)**
+3. Set memory size minimal **1024 MB**
+4. Pilih opsi **Create a virtual hardisk now**
+5. Pilih opsi **VHD (Virtual Hard Disk)**
+6. Pilih opsi **Dynamically allocated**
+7. Set alokasi disk minimal **20 GB** sesuai rekomendasi
+8. Pilih **create**
 
 Langkah selanjutnya adalah mengintalasi kali linux pada virtual mesin
-- Klik kanan pada virtual mesin yang sudah kita buat sebelumnya
-- Pilih **Start**, kemudian pilih **Normal Start**
-- Pada menu Select start-up disk pilih disk Kali Linux yang sudah kita download tadi, kemudain Pilih **Start**
-- Lakukan Instalasi Kali Linux pada umumnya, kita bisa memilih opsi **Graphical install** untuk lebih memudahkan dalam proses penginstallan
+1. Klik kanan pada virtual mesin yang sudah kita buat sebelumnya
+2. Pilih **Start**, kemudian pilih **Normal Start**
+3. Pada menu Select start-up disk pilih disk Kali Linux yang sudah kita download tadi, kemudain Pilih **Start**
+4. Lakukan Instalasi Kali Linux pada umumnya, kita bisa memilih opsi **Graphical install** untuk lebih memudahkan dalam proses penginstallan
 
 ## Setting NAT pada Virtualbox
 
 Agar kedua device dapat saling terhubung dan dapat terkoneksi dengan internet maka kita harus men-setup NAT pada kedua device tersebut. Setelah kita men-setup NAT, maka kita tidak perlu lagi mengkonfigurasikan ip address pada kedua device tersebut. Berikut ini adalah langkah - langkahnya.
 
 **Membuat NAT**
-- Buka Virtualbox, Klik **File**, kemudian pilih **Preferences**
-- Pilih **Network**, kemudian tambahkan NAT network dengan mengklik **icon** yang bertanda **Plus** pada sisi kanan
-- Setelah ditambahkan, kemudian edit NAT tersebut. Pada bagian Network name anda bisa merubah nama NAT sesuai keinginan.
-- Pada bagian **Network CIDR** isikan sesuai koneksi jaringan dimana anda terhubung. Sebagai contoh **10.151.32.0/24**
-- Centang pada bagian **Supports DHCP** agar pembagian ip bersifat dinamis
-- Klik **OK**
+1. Buka Virtualbox, Klik **File**, kemudian pilih **Preferences**
+2. Pilih **Network**, kemudian tambahkan NAT network dengan mengklik **icon** yang bertanda **Plus** pada sisi kanan
+3. Setelah ditambahkan, kemudian edit NAT tersebut. Pada bagian Network name anda bisa merubah nama NAT sesuai keinginan.
+4. Pada bagian **Network CIDR** isikan sesuai koneksi jaringan dimana anda terhubung. Sebagai contoh **10.151.32.0/24**
+5. Centang pada bagian **Supports DHCP** agar pembagian ip bersifat dinamis
+6. Klik **OK**
 
 **Men-setup NAT pada Device**
-- Klik kanan pada virtual mesin
-- Pilih bagian **Network**
-- Pilih **Adapter 1**, kemudian centang pada bagian **Enable Network Adapter**.
-- Pada bagian Attached to pilih **NAT Network**. Kemudian pilih NAT yang sudah kita buat tadi.
-- Klik **OK**
+1. Klik kanan pada virtual mesin
+2. Pilih bagian **Network**
+3. Pilih **Adapter 1**, kemudian centang pada bagian **Enable Network Adapter**.
+4. Pada bagian Attached to pilih **NAT Network**. Kemudian pilih NAT yang sudah kita buat tadi.
+5. Klik **OK**
 
 **Catatan**
 > - Lakukan langkah untuk men-setup NAT pada kedua device
@@ -116,17 +116,26 @@ Dikarenakan kita sudah menginstall SSH Server diawal maka kita tidak perlu melak
 ## Langkah Uji Penetrasi dengan SSH Brute Force Tools
 
 Kita tidak perlu untuk menginstall tools untuk penetrasi, karena di Kali Linux tools tersebut semuanya sudah lengkap terinstall.
-Sebelum kita memulai ujicoba, siapkan terlebih dahulu kumpulan list kemungkinan password. Disini kami meletakkan kumpulan password tersebut pada file **passlist.txt**
+Sebelum kita memulai ujicoba, siapkan terlebih dahulu kumpulan list kemungkinan password. Disini kami meletakkan kumpulan password tersebut pada file **passlist.txt**. Untuk skenario ujicoba, kami akan mencoba melakukan brute force attack ke komputer **hendri** dengan alamat ip **10.151.32.4**.
 
-Uji Penetrasi 1
+**Uji Penetrasi 1**
 
 Hydra
+- Buka Applikasi Hydra
+- Syntax penggunaan : `hydra -l username -P ListofPassword ssh://iptujuan`
+- Maka perintah yang dimasukkan : `hydra -l hendri -P passlist.txt ssh://10.151.32.4` 
 
 Ncrack
+- Buka Applikasi Ncrack
+- Syntax penggunaan : `ncrack -v --user username -P ListofPassword ssh://iptujuan`
+- Maka perintah yang dimasukkan : `ncrack -v --user hendri -P passlist.txt ssh://10.151.32.4` 
 
 Medusa
+- Buka Applikasi Ncrack
+- Syntax penggunaan : `medusa -u username -P ListofPassword -h iptujuan -M ssh`
+- Maka perintah yang dimasukkan : `medusa -u hendri -P passlist.txt -h 10.151.32.4 -M ssh`
 
-Uji Penetrasi 2
+**Uji Penetrasi 2**
 
 Install terlebih dahulu **file2ban** pada Ubuntu Server
 - Masuk keterminal pada Ubuntu Server
@@ -135,7 +144,14 @@ Install terlebih dahulu **file2ban** pada Ubuntu Server
 
 Konfigurasi fail2ban
 - Atur konfigurasi di /etc/fail2ban/jail.conf
-- 
+- Tambahkan beberapa baris dibawah berikut :
+```> enable = true
+> port = ssh
+> filter = sshd
+> logpath = /var/log/auth.log
+> maxretry = 6
+> bantime = 120
+```
 
 Hydra
 
