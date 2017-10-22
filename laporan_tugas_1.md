@@ -171,4 +171,4 @@ Medusa
 **Hasil Uji Penetrasi 2**
 1. Ketiga aplikasi tersebut tidak pada saat melakukan percobaan ke tujuh karena mengalami connection refuse sehingga, gagal dalam melakukan brute force attack
 2. Setelah melakukan percobaan 6 kali dan gagal, maka otomatis server akan **mem-banned** ip yang berusaha untuk mengakses server tersebut selama 2 menit
-3. Hasil percobaan untuk melakukan brute force attack dapat dilihat di `**/var/log/auth.log**`
+3. Hasil percobaan untuk melakukan brute force attack dapat dilihat di **`/var/log/auth.log`**
