@@ -40,31 +40,70 @@ Hydra dan Ncrack merupakan program login cracker yang men-support beragam protok
 # Hasil Uji Penetrasi 1
 
 Sebelum kita melakukan uji penetrasi, terlebih dahulu kita harus menyiapkan tools yang diperlukan
-> - Virtualbox, bisa didownload di *www.virtualbox.org/wiki/Downloads*. Pilih yang bagian *Windows hosts*
-> - Ubuntu Server, bisa didownload di *www.ubuntu.com/download/server*. Pilih yang versi *Ubuntu Server 17.10*
-> - Kali Linux, bisa didownload di *www.kali.org/downloads/*. Pilih *Kali 64 bit* dengan menggunakan *HTTP*
+- Virtualbox, bisa didownload di *www.virtualbox.org/wiki/Downloads*. Pilih yang bagian *Windows hosts*
+- Ubuntu Server, bisa didownload di *www.ubuntu.com/download/server*. Pilih yang versi *Ubuntu Server 17.10*
+- Kali Linux, bisa didownload di *www.kali.org/downloads/*. Pilih *Kali 64 bit* dengan menggunakan *HTTP*
 
 ## Langkah Instalasi Ubuntu Server
 
 Setelah kita menginstall VirtualBox, langkah selanjutnya adalah menyiapkan environment untuk Ubuntu Server
-> - Buka Virtualbox, kemudian pilih **New**
-> - Masukkan nama OS, Pilih type **Linux**, Pilih version **Ubuntu (64-bit)**
-> - Set memory size **1024 MB**
-> - Pilih opsi **Create a virtual hardisk now**
-> - Pilih opsi **VHD (Virtual Hard Disk)**
-> - Pilih opsi **Dynamically allocated**
-> - Set alokasi disk minimal **10 GB** sesuai rekomendasi
-> - Pilih **create**
+- Buka Virtualbox, kemudian pilih **New**
+- Masukkan nama OS, Pilih type **Linux**, Pilih version **Ubuntu (64-bit)**
+- Set memory size minimal **1024 MB**
+- Pilih opsi **Create a virtual hardisk now**
+- Pilih opsi **VHD (Virtual Hard Disk)**
+- Pilih opsi **Dynamically allocated**
+- Set alokasi disk minimal **10 GB** sesuai rekomendasi
+- Pilih **create**
 
 Setelah kita menset-up environment, maka kita akan melakukan instalasi Ubuntu Server
-> - Klik kanan pada virtual mesin yang sudah kita buat sebelumnya
-> - Pilih **Start** kemudian **Normal Start**
-> - Pada menu Select start-up disk pilih disk Ubuntu Server yang sudah kita download tadi, kemudain Pilih **Start**
-> - Lakukan Instalasi Ubuntu Server yang pada umumnya
+- Klik kanan pada virtual mesin yang sudah kita buat sebelumnya
+- Pilih **Start**, kemudian pilih **Normal Start**
+- Pada menu Select start-up disk pilih disk Ubuntu Server yang sudah kita download tadi, kemudain Pilih **Start**
+- Lakukan Instalasi Ubuntu Server pada umumnya
+
+**Catatan**
+> - Jangan lupa untuk mencentang **OpenSSH Server** ketika menu dialog box **Software selection** muncul, agar aplikasi tersebut otomatis terinstall pada Ubuntu Server
 
 ## Langkah Instalasi OS untuk Penetrasi
 
-Sebelum kita menginstall Kali Linux
+Sebelum kita menginstall Kali Linux, terlebih dahulu kita harus menyiapkan environment sama seperti sebelumnya
+- Buka Virtualbox, kemudian pilih **New**
+- Masukkan nama OS, Pilih type **Debian**, Pilih version **Debian (64-bit)**
+- Set memory size minimal **1024 MB**
+- Pilih opsi **Create a virtual hardisk now**
+- Pilih opsi **VHD (Virtual Hard Disk)**
+- Pilih opsi **Dynamically allocated**
+- Set alokasi disk minimal **20 GB** sesuai rekomendasi
+- Pilih **create**
+
+Langkah selanjutnya adalah mengintalasi kali linux pada virtual mesin
+- Klik kanan pada virtual mesin yang sudah kita buat sebelumnya
+- Pilih **Start**, kemudian pilih **Normal Start**
+- Pada menu Select start-up disk pilih disk Kali Linux yang sudah kita download tadi, kemudain Pilih **Start**
+- Lakukan Instalasi Kali Linux pada umumnya, anda bisa memilih **Graphical install** untuk lebih memudahkan dalam proses penginstallan
+
+## Setting NAT pada Virtualbox
+
+Agar kedua device dapat saling terhubung dan dapat terkoneksi dengan internet maka kita harus menset-up NAT pada kedua device tersebut. Setelah kita menset-up NAT, maka kita tidak perlu lagi mengkonfigurasikan ip address pada kedua device tersebut. Berikut ini adalah langkah - langkahnya.
+
+Membuat NAT
+> - Buka Virtualbox, Klik **File**, kemudian pilih **Preferences**
+> - Pilih **Network**, kemudian tambahkan NAT network dengan mengklik **icon** yang bertanda **Plus** pada sisi kanan
+> - Setelah ditambahkan, kemudian edit NAT tersebut. Pada bagian Network name anda bisa merubah nama NAT sesuai keinginan.
+> - Pada bagian **Network CIDR** isikan sesuai koneksi jaringan dimana anda terhubung. Sebagai contoh **10.151.32.0/24**
+> - Centang pada bagian **Supports DHCP** agar pembagian ip bersifat dinamis
+> - Klik **OK**
+
+Mensetup NAT pada Device
+> - Klik kanan pada virtual mesin
+> - Pilih bagian **Network**
+> - Pilih **Adapter 1**, kemudian centang pada bagian **Enable Network Adapter**.
+> - Pada bagian Attached to pilih **NAT Network**. Kemudian pilih NAT yang sudah kita buat tadi.
+> - Klik **OK**
+
+**Catatan**
+> - Lakukan langkah untuk mensetup NAT pada kedua device
 
 ## Langkah Instalasi SSH Server
 

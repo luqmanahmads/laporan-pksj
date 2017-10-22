@@ -1,0 +1,3 @@
+
+Hydra => hydra -l username -P passlist.txt ssh://ip
+Ncrack => ncrack ssh://ip -u username -P passlist.txt
