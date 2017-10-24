@@ -5,7 +5,7 @@ Dengan adanya internet, informasi dapat berpindah dari suatu tempat ke tempat la
 
 Salah satu mekanisme yang dapat diandalkan untuk menjamin keaslian informasi adalah authentication. Authentication berfungsi sebagai filter yang menentukan apakah seorang pengguna berhak atas suatu informasi atau tidak.
 
-Pada tugas kali ini, kami akan mengamati celah kemananan mekanisme authentication dan bagaimana menanggulangi celah keamanan tersebut. Kami melakukan pengamatan ini dengan cara melakukan uji penetrasi brute force ke suatu SSH Server. Kami akan mencoba memecahkan password untuk login ke SSH Server dengan menggunakan tools Hydra dan Ncrack yang terdapat pada Kali Linux OS. Dengan pengamatan ini, kami berharap dapat meningkatkan awareness pada celah keamanan authentication ini sehingga eksploitasi yang memanfaatkan celah keamanan ini dapat diminimalisir.
+Pada tugas kali ini, kami akan mengamati celah kemananan mekanisme authentication dan bagaimana menanggulangi celah keamanan tersebut. Kami melakukan pengamatan ini dengan cara melakukan uji penetrasi brute force ke suatu SSH Server. Kami akan mencoba memecahkan password untuk login ke SSH Server dengan menggunakan tools Hydra, Ncrack, dan Medusa yang terdapat pada Kali Linux OS. Dengan pengamatan ini, kami berharap dapat meningkatkan awareness pada celah keamanan authentication ini sehingga eksploitasi yang memanfaatkan celah keamanan ini dapat diminimalisir.
 
 # Dasar Teori
 
@@ -31,11 +31,11 @@ Ubuntu Server 17.10 merupakan sistem operasi server berbasis Linux. Ubuntu Serve
 
 ## Kali Linux 2017.2
 
-Kali Linux merupakan sistem operasi turunan Debian berbasis Linux. Kali Linux memiliki lebih dari 600 penetration testing program, diantaranya Hydra dan Ncrack. Kali Linux berperan sebagai client yang akan melakukan penetrasi ke Ubuntu Server.
+Kali Linux merupakan sistem operasi turunan Debian berbasis Linux. Kali Linux memiliki lebih dari 600 penetration testing program, diantaranya Hydra, Ncrack, dan Medusa. Kali Linux berperan sebagai client yang akan melakukan penetrasi ke Ubuntu Server.
 
-## Hydra dan Ncrack
+## Hydra, Ncrack dan Medusa
 
-Hydra dan Ncrack merupakan program login cracker yang men-support beragam protokol untuk diserang, termasuk SSH. Program ini bekerja secara brute force dengan mencoba segala kemungkinan kombinasi karakter. Pada pengamatan ini, kami akan melakukan dictionary attack, yakni mencoba kemungkinan password dari daftar yang disediakan, menggunakan Hydra dan Ncrack.
+Hydra, Ncrack, dan Medusa merupakan program login cracker yang men-support beragam protokol untuk diserang, termasuk SSH. Program ini bekerja secara brute force dengan mencoba segala kemungkinan kombinasi karakter. Pada pengamatan ini, kami akan melakukan dictionary attack, yakni mencoba kemungkinan password dari daftar yang disediakan, menggunakan Hydra, Ncrack, dan Medusa.
 
 # Hasil Uji Penetrasi 1
 
