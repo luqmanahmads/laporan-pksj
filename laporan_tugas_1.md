@@ -40,32 +40,135 @@ Hydra, Ncrack, dan Medusa merupakan program login cracker yang men-support berag
 # Hasil Uji Penetrasi 1
 
 Sebelum kita melakukan uji penetrasi, terlebih dahulu kita harus menyiapkan tools yang diperlukan
-> - Virtualbox, bisa didownload di *www.virtualbox.org/wiki/Downloads*. Pilih yang bagian *Windows hosts*
-> - Ubuntu Server, bisa didownload di *www.ubuntu.com/download/server*. Pilih yang versi *Ubuntu Server 17.10*
-> - Kali Linux, bisa didownload di *www.kali.org/downloads/*. Pilih *Kali 64 bit* dengan menggunakan *HTTP*
+- Virtualbox, bisa didownload di *www.virtualbox.org/wiki/Downloads*. Pilih yang bagian *Windows hosts*
+- Ubuntu Server, bisa didownload di *www.ubuntu.com/download/server*. Pilih yang versi *Ubuntu Server 17.10*
+- Kali Linux, bisa didownload di *www.kali.org/downloads/*. Pilih *Kali 64 bit* dengan menggunakan *HTTP*
 
 ## Langkah Instalasi Ubuntu Server
 
 Setelah kita menginstall VirtualBox, langkah selanjutnya adalah menyiapkan environment untuk Ubuntu Server
-> - Buka Virtualbox, kemudian pilih **New**
-> - Masukkan nama OS, Pilih type **Linux**, Pilih version **Ubuntu (64-bit)**
-> - Set memory size **1024 MB**
-> - Pilih opsi **Create a virtual hardisk now**
-> - Pilih opsi **VHD (Virtual Hard Disk)**
-> - Pilih opsi **Dynamically allocated**
-> - Set alokasi disk minimal **10 GB** sesuai rekomendasi
-> - Pilih **create**
+1. Buka Virtualbox, kemudian pilih **New**
+2. Masukkan nama OS, Pilih type **Linux**, Pilih version **Ubuntu (64-bit)**
+3. Set memory size minimal **1024 MB**
+4. Pilih opsi **Create a virtual hardisk now**
+5. Pilih opsi **VHD (Virtual Hard Disk)**
+6. Pilih opsi **Dynamically allocated**
+7. Set alokasi disk minimal **10 GB** sesuai rekomendasi
+8. Pilih **create**
 
-Setelah kita menset-up environment, maka kita akan melakukan instalasi Ubuntu Server
-> - Klik kanan pada virtual mesin yang sudah kita buat sebelumnya
-> - Pilih **Start** kemudian **Normal Start**
-> - Pada menu Select start-up disk pilih disk Ubuntu Server yang sudah kita download tadi, kemudain Pilih **Start**
-> - Lakukan Instalasi Ubuntu Server yang pada umumnya
+Setelah kita men-setup environment, maka kita akan melakukan instalasi Ubuntu Server
+1. Klik kanan pada virtual mesin yang sudah kita buat sebelumnya
+2. Pilih **Start**, kemudian pilih **Normal Start**
+3. Pada menu Select start-up disk pilih disk Ubuntu Server yang sudah kita download tadi, kemudain Pilih **Start**
+4. Lakukan Instalasi Ubuntu Server pada umumnya
+
+**Catatan**
+> - Jangan lupa untuk mencentang **OpenSSH Server** ketika menu dialog box **Software selection** muncul, agar aplikasi tersebut otomatis terinstall pada Ubuntu Server
 
 ## Langkah Instalasi OS untuk Penetrasi
 
-Sebelum kita menginstall Kali Linux
+Sebelum kita menginstall Kali Linux, terlebih dahulu kita harus menyiapkan environment sama seperti sebelumnya
+1. Buka Virtualbox, kemudian pilih **New**
+2. Masukkan nama OS, Pilih type **Debian**, Pilih version **Debian (64-bit)**
+3. Set memory size minimal **1024 MB**
+4. Pilih opsi **Create a virtual hardisk now**
+5. Pilih opsi **VHD (Virtual Hard Disk)**
+6. Pilih opsi **Dynamically allocated**
+7. Set alokasi disk minimal **20 GB** sesuai rekomendasi
+8. Pilih **create**
+
+Langkah selanjutnya adalah mengintalasi kali linux pada virtual mesin
+1. Klik kanan pada virtual mesin yang sudah kita buat sebelumnya
+2. Pilih **Start**, kemudian pilih **Normal Start**
+3. Pada menu Select start-up disk pilih disk Kali Linux yang sudah kita download tadi, kemudain Pilih **Start**
+4. Lakukan Instalasi Kali Linux pada umumnya, kita bisa memilih opsi **Graphical install** untuk lebih memudahkan dalam proses penginstallan
+
+## Setting NAT pada Virtualbox
+
+Agar kedua device dapat saling terhubung dan dapat terkoneksi dengan internet maka kita harus men-setup NAT pada kedua device tersebut. Setelah kita men-setup NAT, maka kita tidak perlu lagi mengkonfigurasikan ip address pada kedua device tersebut. Berikut ini adalah langkah - langkahnya.
+
+**Membuat NAT**
+1. Buka Virtualbox, Klik **File**, kemudian pilih **Preferences**
+2. Pilih **Network**, kemudian tambahkan NAT network dengan mengklik **icon** yang bertanda **Plus** pada sisi kanan
+3. Setelah ditambahkan, kemudian edit NAT tersebut. Pada bagian Network name anda bisa merubah nama NAT sesuai keinginan.
+4. Pada bagian **Network CIDR** isikan sesuai koneksi jaringan dimana anda terhubung. Sebagai contoh **10.151.32.0/24**
+5. Centang pada bagian **Supports DHCP** agar pembagian ip bersifat dinamis
+6. Klik **OK**
+
+**Men-setup NAT pada Device**
+1. Klik kanan pada virtual mesin
+2. Pilih bagian **Network**
+3. Pilih **Adapter 1**, kemudian centang pada bagian **Enable Network Adapter**.
+4. Pada bagian Attached to pilih **NAT Network**. Kemudian pilih NAT yang sudah kita buat tadi.
+5. Klik **OK**
+
+**Catatan**
+> - Lakukan langkah untuk men-setup NAT pada kedua device
 
 ## Langkah Instalasi SSH Server
 
+Dikarenakan kita sudah menginstall SSH Server diawal maka kita tidak perlu melakukan langkah ini. Akan tetapi, jika kita lupa untuk mencentang **OpenSSH Server** pada saat instalasi Ubuntu Server maka kita harus melakukan instalasi secara manual.
+
+- Masuk keterminal pada Ubuntu Server
+- Ketikkan `sudo apt-get update`
+- Ketikkan `sudo apt-get install openssh-server`
+
 ## Langkah Uji Penetrasi dengan SSH Brute Force Tools
+
+Kita tidak perlu untuk menginstall tools untuk penetrasi, karena di Kali Linux tools tersebut semuanya sudah lengkap terinstall.
+Sebelum kita memulai ujicoba, siapkan terlebih dahulu kumpulan list kemungkinan password. **Ingat** didalam kumpulan password tersebut harus berisi **password asli** dari komputer tujuan. Disini kami meletakkan kumpulan password tersebut pada file **passlist.txt**. Untuk skenario ujicoba, kami akan mencoba melakukan brute force attack ke komputer **hendri** dengan alamat ip **10.151.32.4**.
+
+**Uji Penetrasi 1**
+
+Hydra
+- Buka Aplikasi Hydra
+- Syntax penggunaan : `hydra -l username -P ListofPassword ssh://iptujuan`
+- Maka perintah yang dimasukkan : `hydra -l hendri -P passlist.txt ssh://10.151.32.4` 
+
+Ncrack
+- Buka Aplikasi Ncrack
+- Syntax penggunaan : `ncrack -u username -P ListofPassword ssh://iptujuan`
+- Maka perintah yang dimasukkan : `ncrack -u hendri -P passlist.txt ssh://10.151.32.4` 
+
+Medusa
+- Buka Aplikasi Ncrack
+- Syntax penggunaan : `medusa -u username -P ListofPassword -h iptujuan -M ssh`
+- Maka perintah yang dimasukkan : `medusa -u hendri -P passlist.txt -h 10.151.32.4 -M ssh`
+
+**Hasil Uji Penetrasi 1**
+1. Ketiga aplikasi tersebut berhasil dalam melakukan brute force attack dengan mencoba semua kemungkinan password yang ada.
+2. Dari ketiga aplikasi tersebut, **Hydra** paling cepat dalam menemukan hasil pencarian kemudian disusul oleh **Ncrack** dan terakhir **Medusa**
+
+**Uji Penetrasi 2**
+
+Lakukan instalasi terlebih dahulu **file2ban** pada Ubuntu Server
+- Masuk keterminal pada Ubuntu Server
+- Ketikkan `sudo apt-get update`
+- Ketikkan `sudo apt-get install fail2ban`
+
+Konfigurasi fail2ban
+- Atur konfigurasi di /etc/fail2ban/jail.conf
+- Tambahkan beberapa baris dibawah berikut :
+``` 
+	enable = true
+ 	port = ssh
+ 	filter = sshd
+ 	logpath = /var/log/auth.log
+ 	maxretry = 6
+ 	bantime = 120
+```
+- Jalankan fail2ban dengan memasukkan perantah `sudo service fail2ban start` pada terminal
+
+Hydra
+- Masukkan perintah : `hydra -l hendri -P passlist.txt ssh://10.151.32.4` 
+
+Ncrack
+- Masukkan perintah : `ncrack -u hendri -P passlist.txt ssh://10.151.32.4` 
+
+Medusa
+- Masukkan perintah : `medusa -u hendri -P passlist.txt -h 10.151.32.4 -M ssh`
+
+**Hasil Uji Penetrasi 2**
+1. Ketiga aplikasi tersebut tidak pada saat melakukan percobaan ke tujuh karena mengalami connection refuse sehingga, gagal dalam melakukan brute force attack
+2. Setelah melakukan percobaan 6 kali dan gagal, maka otomatis server akan **mem-banned** ip yang berusaha untuk mengakses server tersebut selama 2 menit
+3. Hasil percobaan untuk melakukan brute force attack dapat dilihat di **`/var/log/auth.log`**
