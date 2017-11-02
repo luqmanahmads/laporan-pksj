@@ -113,10 +113,11 @@ Agar kedua device dapat saling terhubung dan dapat terkoneksi dengan internet ma
 ## Instalasi Wordpress
 
 Referensi
-...[How To Install Wordpress on Ubuntu 14.04](https://www.digitalocean.com/community/tutorials/how-to-install-wordpress-on-ubuntu-14-04)
-...[How To Install Linux, Apache, MySQL, PHP (LAMP) stack on Ubuntu 16.04](https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-ubuntu-16-04)
-...[How to Install WordPress 4.7 On Ubuntu 16.10/16.04 Using LAMP Stack](https://www.tecmint.com/install-wordpress-on-ubuntu-16-04-with-lamp/)
+⋅⋅⋅[How To Install Wordpress on Ubuntu 14.04](https://www.digitalocean.com/community/tutorials/how-to-install-wordpress-on-ubuntu-14-04)⋅⋅
+⋅⋅⋅[How To Install Linux, Apache, MySQL, PHP (LAMP) stack on Ubuntu 16.04](https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-ubuntu-16-04)⋅⋅
+⋅⋅⋅[How to Install WordPress 4.7 On Ubuntu 16.10/16.04 Using LAMP Stack](https://www.tecmint.com/install-wordpress-on-ubuntu-16-04-with-lamp/)⋅⋅
 
+Langkah-Langkah Instalasi Wordpress
 1. Lakukan update terlebih dahulu `sudo apt-get update`
 2. Install Apache `sudo apt-get install apache2`
 3. Set Global ServerName agar server berjalan sesuai dengan alamat IP yang kita definisikan. Buka `/etc/apache2/apache2.conf` lalu tambahkan ServerName localhost agar server berjalan di local
