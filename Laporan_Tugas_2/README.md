@@ -113,9 +113,9 @@ Agar kedua device dapat saling terhubung dan dapat terkoneksi dengan internet ma
 ## Instalasi Wordpress
 
 Referensi
-https://www.digitalocean.com/community/tutorials/how-to-install-wordpress-on-ubuntu-14-04
-https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-ubuntu-16-04
-https://www.tecmint.com/install-wordpress-on-ubuntu-16-04-with-lamp/
+[How To Install Wordpress on Ubuntu 14.04](https://www.digitalocean.com/community/tutorials/how-to-install-wordpress-on-ubuntu-14-04)
+[How To Install Linux, Apache, MySQL, PHP (LAMP) stack on Ubuntu 16.04](https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-ubuntu-16-04)
+[How to Install WordPress 4.7 On Ubuntu 16.10/16.04 Using LAMP Stack](https://www.tecmint.com/install-wordpress-on-ubuntu-16-04-with-lamp/)
 
 1. Lakukan update terlebih dahulu `sudo apt-get update`
 2. Install Apache `sudo apt-get install apache2`
@@ -130,9 +130,9 @@ https://www.tecmint.com/install-wordpress-on-ubuntu-16-04-with-lamp/
 11. Buatlah sebuah file `sudo nano /var/www/html/info.php`
 12. Tambahkan kode berikut 
 ```php
-	<?php 
+<?php 
 	phpinfo();
-	?>
+?>
 ``` 
 13. Ubah urutan pada /etc/apache2/mods-enabled/dir.conf agar apache membaca file index.php terlebih dahulu
 ```
@@ -155,8 +155,10 @@ exit
 18. Ekstrak `tar -xzvf latest.tar.gz`
 19. Pindahkan folder ke /var/www/html `sudo rsync -av wordpress/* /var/www/html/`
 20. Set permission
-`sudo chown -R www-data:www-data /var/www/html/
-sudo chmod -R 755 /var/www/html/`
+```
+sudo chown -R www-data:www-data /var/www/html/
+sudo chmod -R 755 /var/www/html/
+```
 21. Pindah ke direktori html `cd /var/www/html`
 22. Amankan Wordpress `curl -s https://api.wordpress.org/secret-key/1.1/salt/`
 23. Pada browser buka halaman `localhost/wp-admin/setup-config.php`
