@@ -128,22 +128,29 @@ https://www.tecmint.com/install-wordpress-on-ubuntu-16-04-with-lamp/
 9. Masukkan Password dan Confirm password
 10. Install PHP menggukanan perintah `sudo apt-get install php7.0 php7.0-mysql libapache2-mod-php7.0 php7.0-cli php7.0-cgi php7.0-gd`
 11. Buatlah sebuah file `sudo nano /var/www/html/info.php`
-12. Tambahkan kode berikut `<?php 
-							phpinfo();
-							?>` 
+12. Tambahkan kode berikut 
+```php
+	<?php 
+	phpinfo();
+	?>
+``` 
 13. Ubah urutan pada /etc/apache2/mods-enabled/dir.conf agar apache membaca file index.php terlebih dahulu
- `<IfModule mod_dir.c>
-    DirectoryIndex **index.php** index.html index.cgi index.pl index.xhtml index.htm
-</IfModule>`
+```
+<IfModule mod_dir.c>
+	DirectoryIndex **index.php** index.html index.cgi index.pl index.xhtml index.htm
+</IfModule>
+```
 14. Restart Apache `sudo systemctl restart apache2`
 15. Pada browser cek halaman info.php
 16. Buat database baru pada Mysql, jalankan perintah berikut satu persatu:
-`mysql -u root -p
+```
+mysql -u root -p
 CREATE DATABASE wordpress;
 CREATE USER wordpressuser@localhost IDENTIFIED BY 'password';
 GRANT ALL PRIVILEGES ON wordpress.* TO wordpressuser@localhost;
 FLUSH PRIVILEGES;
-exit`
+exit
+```
 17. Download Wordpress `wget -c http://wordpress.org/latest.tar.gz`
 18. Ekstrak `tar -xzvf latest.tar.gz`
 19. Pindahkan folder ke /var/www/html `sudo rsync -av wordpress/* /var/www/html/`
