@@ -3,5 +3,5 @@
 2. Luqman Ahmads
 
 # Laporan
-- Tugas 1 (https://github.com/luqmanahmads/laporan-pksj/blob/master/Laporan_Tugas_1/README.md)
-- Tugas 2 (https://github.com/luqmanahmads/laporan-pksj/blob/master/Laporan_Tugas_2/README.md)
+- [Tugas 1 - SSH Brute Force](https://github.com/luqmanahmads/laporan-pksj/blob/master/Laporan_Tugas_1/README.md)
+- [Tugas 2 - SQL Injection](https://github.com/luqmanahmads/laporan-pksj/blob/master/Laporan_Tugas_2/README.md)
