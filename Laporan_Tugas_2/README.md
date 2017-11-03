@@ -89,26 +89,7 @@ Langkah selanjutnya adalah mengintalasi kali linux pada virtual mesin
 3. Pada menu Select start-up disk pilih disk Kali Linux yang sudah kita download tadi, kemudain Pilih **Start**
 4. Lakukan Instalasi Kali Linux pada umumnya, kita bisa memilih opsi **Graphical install** untuk lebih memudahkan dalam proses penginstallan
 
-#### B. Setting NAT pada Virtualbox
-
-Agar kedua device dapat saling terhubung dan dapat terkoneksi dengan internet maka kita harus men-setup NAT pada kedua device tersebut. Setelah kita men-setup NAT, maka kita tidak perlu lagi mengkonfigurasikan ip address pada kedua device tersebut. Berikut ini adalah langkah - langkahnya.
-
-**Membuat NAT**
-1. Buka Virtualbox, Klik **File**, kemudian pilih **Preferences**
-2. Pilih **Network**, kemudian tambahkan NAT network dengan mengklik **icon** yang bertanda **Plus** pada sisi kanan
-3. Setelah ditambahkan, kemudian edit NAT tersebut. Pada bagian Network name anda bisa merubah nama NAT sesuai keinginan.
-4. Pada bagian **Network CIDR** isikan sesuai koneksi jaringan dimana anda terhubung. Sebagai contoh **10.151.32.0/24**
-5. Centang pada bagian **Supports DHCP** agar pembagian ip bersifat dinamis
-6. Klik **OK**
-
-**Men-setup NAT pada Device**
-1. Klik kanan pada virtual mesin
-2. Pilih bagian **Network**
-3. Pilih **Adapter 1**, kemudian centang pada bagian **Enable Network Adapter**.
-4. Pada bagian Attached to pilih **NAT Network**. Kemudian pilih NAT yang sudah kita buat tadi.
-5. Klik **OK**
-
-#### C. Instalasi Wordpress
+#### B. Instalasi Wordpress
 
 Referensi
 - [How To Install Wordpress on Ubuntu 14.04](https://www.digitalocean.com/community/tutorials/how-to-install-wordpress-on-ubuntu-14-04).
@@ -163,26 +144,26 @@ sudo chmod -R 755 /var/www/html/
 23. Pada browser buka halaman `localhost/wp-admin/setup-config.php`
 24. Masukkan Database name, Database username, Database password dan Database host sesuai dengan yang dibuat sebelumnya
 
-#### D. Instalasi Video Player 1.5.16
+#### C. Instalasi Video Player 1.5.16
 1. Download plugin pada link *https://wordpress.org/plugins/player/advanced/*
 2. Pada bagian Previous Version, pilih versi **1.5.16**
 3. Klik tombol **Download**
 4. Ekstrak plugin ke /var/www/html/wp-content/plugins dengan perintah `unzip player.1.5.16.zip -d /var/www/html/wp-content/plugins`
 
-#### E. Instalasi LeagueManager 3.9.1.1
+#### D. Instalasi LeagueManager 3.9.1.1
 1. Buka link plugin pada *https://wordpress.org/plugins/leaguemanager/advanced/*
 2. Pada bagian Previous Version, pilih versi **3.9.1.1**
 3. Klik tombol **Download**
 4. Ekstrak plugin ke /var/www/html/wp-content/plugins dengan perintah `unzip leaguemanager.3.9.1.1.zip -d /var/www/html/wp-content/plugins`
 
-#### F. Aktivasi Plugin
+#### E. Aktivasi Plugin
 1. Buka browser, masuk kehalaman http://localhost/wp-admin/plugins.php.
 2. Pada bagian plugin centang **LeagueManager** dan **Spider Video Player**.
 3. Kemuadian klik Activate lalu Apply.
 
-#### G. Instalasi WPscan
+#### F. Instalasi WPscan
 
-#### H. Instalasi Sqlmap
+#### G. Instalasi Sqlmap
 
 
 Uji Coba Penetrasi <a name="uji"/>
