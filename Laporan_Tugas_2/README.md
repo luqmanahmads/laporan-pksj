@@ -14,7 +14,7 @@ Pendahuluan <a name="pendahuluan"/>
 Dasar Teori <a name="teori"/>
 -----------------
 
-## A. VirtualBox
+#### A. VirtualBox
 
 VirtualBox merupakan perangkat lunak virtualisasi sistem operasi. Perangkat lunak ini dapat mengeksekusi sistem operasi di suatu sistem operasi utama. Dengan VirtualBox, kita dapat menajalankan sistem operasi linux meskipun komputer yang digunakan menggunakan sistem operasi windows. VirtualBox berguna untuk melakukan simulasi tanpa perlu kehilangan sistem yang ada.
 
@@ -24,23 +24,23 @@ Pada pengamatan ini, kami menggunakan VirtualBox untuk melakukan virtualisasi si
 
 Dengan VirtualBox, Ubuntu Server 17.10 dan Kali Linux 2017.2 dapat berjalan bersamaan pada komputer yang sama.
 
-## B. Kali Linux 2017.2
+#### B. Kali Linux 2017.2
 
 Kali Linux merupakan sistem operasi turunan Debian berbasis Linux. Kali Linux memiliki lebih dari 600 penetration testing program, diantaranya Hydra, Ncrack, dan Medusa. Kali Linux berperan sebagai client yang akan melakukan penetrasi ke Ubuntu Server.
 
-## C. Ubuntu 16.04
+#### C. Ubuntu 16.04
 
 Ubuntu 16.04 merupakan salah satu sistem operasi distribusi Linux yang berbasiskan Debian. Ubuntu bersifat Open source dan dirancang untuk kepentingan penggunaan pribadi.
 
-## D. Wordpress
+#### D. Wordpress
 
 Wordpress adalah aplikasi open source yang biasa digunakan dalam pembuatan blog dan CMS (Content Management System) karena kemampuannya untuk dimodifikasi dan disesuaikan dengan kebutuhan penggunanya. WordPress dibangun dengan bahasa pemrograman PHP dan basis data (database) MySQL. PHP dan MySQL.
 
-## E. Video Player 1.5.16
+#### E. Video Player 1.5.16
 
 Spider Video Player adalah salah satu plugin video Wordpress yang memungkinkan kita unutuk menambahkan video ke situs web dengan mudah. Selain itu, Spider Video Player memiliki banyak fitur sehingga memudahkan kita dalam penggunaan plugin ini, seperti mengatur playlist, memilih tata letak video dan masih banyak lagi.
 
-## F. LeagueManager 3.9.1.1
+#### F. LeagueManager 3.9.1.1
 
 League Manager adalah plugin Wordpress yang didesain untuk memudahkan kita dalam mengelola konten olah raga pada blog atau situ kita. League Manager memiliki fitur unutuk menampilkan tim dan pertandingan, statistik pertandingan, peraturan pada pertandingan dan masih banyak lagi.
 
