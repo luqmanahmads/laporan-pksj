@@ -26,7 +26,7 @@ Dengan VirtualBox, Ubuntu Server 17.10 dan Kali Linux 2017.2 dapat berjalan bers
 
 #### B. Kali Linux 2017.2
 
-Kali Linux merupakan sistem operasi turunan Debian berbasis Linux. Kali Linux memiliki lebih dari 600 penetration testing program, diantaranya Hydra, Ncrack, dan Medusa. Kali Linux berperan sebagai client yang akan melakukan penetrasi ke Ubuntu Server.
+Kali Linux merupakan sistem operasi turunan Debian berbasis Linux. Kali Linux memiliki lebih dari 600 penetration testing program, diantaranya Sqlmap, WPscan dan masih banyak lagi. Kali Linux berperan sebagai client yang akan melakukan penetrasi ke Ubuntu Server.
 
 #### C. Ubuntu 16.04
 
@@ -95,6 +95,7 @@ Referensi
 - [How To Install Wordpress on Ubuntu 14.04](https://www.digitalocean.com/community/tutorials/how-to-install-wordpress-on-ubuntu-14-04).
 - [How To Install Linux, Apache, MySQL, PHP (LAMP) stack on Ubuntu 16.04](https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-ubuntu-16-04).
 - [How to Install WordPress 4.7 On Ubuntu 16.10/16.04 Using LAMP Stack](https://www.tecmint.com/install-wordpress-on-ubuntu-16-04-with-lamp/).
+- [WPScan Install on Ubuntu](https://hackertarget.com/wpscan-install-ubuntu/).
 
 **Langkah-Langkah Instalasi Wordpress**
 1. Lakukan update terlebih dahulu `sudo apt-get update`
@@ -117,7 +118,7 @@ Referensi
 13. Ubah urutan pada /etc/apache2/mods-enabled/dir.conf agar apache membaca file index.php terlebih dahulu
 ```
 <IfModule mod_dir.c>
-	DirectoryIndex **index.php** index.html index.cgi index.pl index.xhtml index.htm
+   DirectoryIndex **index.php** index.html index.cgi index.pl index.xhtml index.htm
 </IfModule>
 ```
 14. Restart Apache `sudo systemctl restart apache2`
@@ -162,8 +163,20 @@ sudo chmod -R 755 /var/www/html/
 3. Kemuadian klik Activate lalu Apply.
 
 #### F. Instalasi WPscan
+Dikarenakan kami menggunkan Sistem Operasi Kali Linux maka, **tidak perlu** lagi menginstall tools penetrasi karena sudah tersedia didalamnya. Akan tetapi jika anda menggukanan Linux versi yang lain seperti ubuntu, mint, xubuntu dan sejenisnya maka anda harus melalukan instalasi secara manual
+
+Langkah - Langkah Instalasi WPscan
+1. Instalasi dependensi menggunakan perintah `sudo apt-get install git libcurl4-openssl-dev libxml2 libxml2-dev libxslt1-dev ruby-dev build-essential libgmp-dev zlib1g-dev`
+2. Clone repository WPScan dari git `git clone https://github.com/wpscanteam/wpscan.git`.
+3. Masuk ke direktori WPScan `cd wpscan`.
+4. Lakukan instalasi dengan perintah `sudo gem install bundler && bundle install --without test development`.
+5. Jalankan aplikasi WPScan dengan perintah `ruby wpscan.rb`.
 
 #### G. Instalasi Sqlmap
+Langkah - Langkah Instalasi Sqlmap
+1. Clone repository Sqlmap dari git `https://github.com/sqlmapproject/sqlmap.git`.
+2. Masuk ke direktori Sqlmap cd sqlmap.
+3. Jalankan aplikasi WPScan dengan perintah `python sqlmap.py`.
 
 
 Uji Coba Penetrasi <a name="uji"/>
