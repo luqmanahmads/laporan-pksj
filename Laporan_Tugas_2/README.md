@@ -189,3 +189,10 @@ Uji Coba Penetrasi <a name="uji"/>
 
 Kesimpulan dan Saran <a name="kesimpulan"/>
 -----------------
+
+#### Kesimpulan
+1. Dengan memanfaatkan Tools WPScan kita dapat mengetahui plugin-plugin yang dapat menjadi celah untuk bagi kita untuk menyusup kedalamnya 
+
+#### Defense
+
+#### Countermeasure
