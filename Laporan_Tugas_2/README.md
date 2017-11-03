@@ -184,7 +184,8 @@ Uji Coba Penetrasi <a name="uji"/>
 1. Buka terminal lalu ketiikkan `wpscan`
 2. Masukkan perintah `wpscan -u 10.151.36.103 --enumerate vp`
 3. Akan muncul hasil dari scanning yang dilakukan seperti berikut
-
+![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/wpscan.png "Result WPScan")
+![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/wpscan2.png "Result WPScan")
 
 Kesimpulan dan Saran <a name="kesimpulan"/>
 -----------------
