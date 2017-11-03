@@ -162,7 +162,7 @@ sudo chmod -R 755 /var/www/html/
 2. Pada bagian plugin centang **LeagueManager** dan **Spider Video Player**.
 3. Kemuadian klik Activate lalu Apply.
 
-#### F. Instalasi WPscan
+#### F. Instalasi WPScan dan Sqlmap
 Dikarenakan kami menggunkan Sistem Operasi Kali Linux maka, **tidak perlu** lagi menginstall tools penetrasi karena sudah tersedia didalamnya. Akan tetapi jika anda menggukanan Linux versi yang lain seperti ubuntu, mint, xubuntu dan sejenisnya maka anda harus melalukan instalasi secara manual
 
 Langkah - Langkah Instalasi WPscan
@@ -172,15 +172,18 @@ Langkah - Langkah Instalasi WPscan
 4. Lakukan instalasi dengan perintah `sudo gem install bundler && bundle install --without test development`.
 5. Jalankan aplikasi WPScan dengan perintah `ruby wpscan.rb`.
 
-#### G. Instalasi Sqlmap
 Langkah - Langkah Instalasi Sqlmap
 1. Clone repository Sqlmap dari git `https://github.com/sqlmapproject/sqlmap.git`.
-2. Masuk ke direktori Sqlmap cd sqlmap.
+2. Masuk ke direktori Sqlmap `cd sqlmap`
 3. Jalankan aplikasi WPScan dengan perintah `python sqlmap.py`.
 
 
 Uji Coba Penetrasi <a name="uji"/>
 -----------------
+#### A. WPScan
+1. Buka terminal lalu ketiikkan `wpscan`
+2. Masukkan perintah `wpscan -u 10.151.36.103 --enumerate vp`
+3. Akan muncul hasil dari scanning yang dilakukan seperti berikut
 
 
 Kesimpulan dan Saran <a name="kesimpulan"/>
