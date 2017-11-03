@@ -215,7 +215,8 @@ Kesimpulan dan Saran <a name="kesimpulan"/>
 -----------------
 
 #### Kesimpulan
-1. Dengan memanfaatkan Tools WPScan kita dapat mengetahui plugin-plugin yang dapat menjadi celah untuk bagi kita untuk menyusup kedalamnya 
+1. Dengan memanfaatkan Tools WPScan kita dapat mengetahui plugin-plugin yang dapat menjadi celah untuk melakukan serangan pada wordpress
+2. Tools Sqlmap dapat digunkan untuk mencuri informasi yang ada pada database server dengan memanfaatkan vulnerability plugin yang ada pada wordpress 
 
 #### Defense
 
