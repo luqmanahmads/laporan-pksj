@@ -1,6 +1,18 @@
-# Pendahuluan
+# Index
 
-# Dasar Teori
+### [Pendahuluan](#pendahuluan)
+### [Dasar Teori](#teori)
+### [Menyiapkan Environtment](#env)
+### [Instalasi](#instalasi)
+### [Uji Coba Penetrasi](#uji)
+### [Kesimpulan dan Saran](#kesimpulan)
+
+----------------------
+Pendahuluan <a name="pendahuluan"/>
+-----------------
+
+Dasar Teori <a name="teori"/>
+-----------------
 
 ## A. VirtualBox
 
@@ -32,7 +44,8 @@ Spider Video Player adalah salah satu plugin video Wordpress yang memungkinkan k
 
 League Manager adalah plugin Wordpress yang didesain untuk memudahkan kita dalam mengelola konten olah raga pada blog atau situ kita. League Manager memiliki fitur unutuk menampilkan tim dan pertandingan, statistik pertandingan, peraturan pada pertandingan dan masih banyak lagi.
 
-# Menyiapkan Environtment
+Menyiapkan Environtment <a name="env"/>
+-----------------
 
 ## A. Environtment Ubuntu 
 
@@ -65,20 +78,8 @@ Agar kedua device dapat saling terhubung dan dapat terkoneksi dengan internet ma
 4. Pada bagian Attached to pilih **NAT Network**. Kemudian pilih NAT yang sudah kita buat tadi.
 5. Klik **OK**
 
-**Catatan**
-> - Lakukan langkah untuk men-setup NAT pada kedua device
-
-## D. Download Plugin Video Player 1.5.16
-1. Buka link *https://wordpress.org/plugins/player/advanced/*
-2. Pada bagian Previous Version, pilih versi **1.5.16**
-3. Klik tombol **Download**
-
-## E. Download LeagueManager 3.9.1.1
-1. Buka link *https://wordpress.org/plugins/leaguemanager/advanced/*
-2. Pada bagian Previous Version, pilih versi **3.9.1.1**
-3. Klik tombol **Download**
-
-# Uji Coba
+Instalasi <a name="instalasi"/>
+-----------------
 
 ## Instalasi Ubuntu
 
@@ -107,9 +108,6 @@ Agar kedua device dapat saling terhubung dan dapat terkoneksi dengan internet ma
 4. Pada bagian Attached to pilih **NAT Network**. Kemudian pilih NAT yang sudah kita buat tadi.
 5. Klik **OK**
 
-**Catatan**
-> - Lakukan langkah untuk men-setup NAT pada kedua device
-
 ## Instalasi Wordpress
 
 Referensi
@@ -132,7 +130,7 @@ Langkah-Langkah Instalasi Wordpress
 12. Tambahkan kode berikut 
 ```php
 <?php 
-	phpinfo();
+  phpinfo();
 ?>
 ``` 
 13. Ubah urutan pada /etc/apache2/mods-enabled/dir.conf agar apache membaca file index.php terlebih dahulu
@@ -166,15 +164,29 @@ sudo chmod -R 755 /var/www/html/
 24. Masukkan Database name, Database username, Database password dan Database host sesuai dengan yang dibuat sebelumnya
 
 ## Instalasi Video Player 1.5.16
+1. Download plugin pada link *https://wordpress.org/plugins/player/advanced/*
+2. Pada bagian Previous Version, pilih versi **1.5.16**
+3. Klik tombol **Download**
+4. Ekstrak plugin ke /var/www/html/wp-content/plugins dengan perintah `unzip player.1.5.16.zip -d /var/www/html/wp-content/plugins`
 
 ## Instalasi LeagueManager 3.9.1.1
+1. Buka link plugin pada *https://wordpress.org/plugins/leaguemanager/advanced/*
+2. Pada bagian Previous Version, pilih versi **3.9.1.1**
+3. Klik tombol **Download**
+4. Ekstrak plugin ke /var/www/html/wp-content/plugins dengan perintah `unzip leaguemanager.3.9.1.1.zip -d /var/www/html/wp-content/plugins`
+
+## Aktivasi Plugin
+1. Buka browser, masuk kehalaman http://localhost/wp-admin/plugins.php.
+2. Pada bagian plugin centang **LeagueManager** dan **Spider Video Player**.
+3. Kemuadian klik Activate lalu Apply.
 
 ## Instalasi WPscan
 
 ## Instalasi sqlmap
 
-# Uji Coba Penetrasi
+Uji Coba Penetrasi <a name="uji"/>
+-----------------
 
-# Kesimpulan dan Saran
 
-Perancangan Keamanan Sistem Jaringan
+Kesimpulan dan Saran <a name="kesimpulan"/>
+-----------------
