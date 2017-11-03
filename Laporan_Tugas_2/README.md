@@ -3,7 +3,7 @@
 ### [Pendahuluan](#pendahuluan)
 ### [Dasar Teori](#teori)
 ### [Menyiapkan Environtment](#env)
-### [Instalasi](#instalasi)
+### [Instalasi](#install)
 ### [Uji Coba Penetrasi](#uji)
 ### [Kesimpulan dan Saran](#kesimpulan)
 
@@ -47,7 +47,7 @@ League Manager adalah plugin Wordpress yang didesain untuk memudahkan kita dalam
 Menyiapkan Environtment <a name="env"/>
 -----------------
 
-## A. Environtment Ubuntu 
+#### A. Environtment Ubuntu 
 
 Setelah kita menginstall VirtualBox, langkah selanjutnya adalah menyiapkan environment untuk Ubuntu Server
 1. Buka Virtualbox, kemudian pilih **New**
@@ -59,7 +59,7 @@ Setelah kita menginstall VirtualBox, langkah selanjutnya adalah menyiapkan envir
 7. Set alokasi disk minimal **20 GB** sesuai rekomendasi
 8. Pilih **create**
 
-## C. Setting NAT pada Virtualbox
+#### B. Setting NAT pada Virtualbox
 
 Agar kedua device dapat saling terhubung dan dapat terkoneksi dengan internet maka kita harus men-setup NAT pada kedua device tersebut. Setelah kita men-setup NAT, maka kita tidak perlu lagi mengkonfigurasikan ip address pada kedua device tersebut. Berikut ini adalah langkah - langkahnya.
 
@@ -78,10 +78,10 @@ Agar kedua device dapat saling terhubung dan dapat terkoneksi dengan internet ma
 4. Pada bagian Attached to pilih **NAT Network**. Kemudian pilih NAT yang sudah kita buat tadi.
 5. Klik **OK**
 
-Instalasi <a name="instalasi"/>
+Instalasi <a name="install"/>
 -----------------
 
-## Instalasi Ubuntu
+#### A. Instalasi Ubuntu
 
 Langkah selanjutnya adalah mengintalasi kali linux pada virtual mesin
 1. Klik kanan pada virtual mesin yang sudah kita buat sebelumnya
@@ -89,7 +89,7 @@ Langkah selanjutnya adalah mengintalasi kali linux pada virtual mesin
 3. Pada menu Select start-up disk pilih disk Kali Linux yang sudah kita download tadi, kemudain Pilih **Start**
 4. Lakukan Instalasi Kali Linux pada umumnya, kita bisa memilih opsi **Graphical install** untuk lebih memudahkan dalam proses penginstallan
 
-## Setting NAT pada Virtualbox
+#### B. Setting NAT pada Virtualbox
 
 Agar kedua device dapat saling terhubung dan dapat terkoneksi dengan internet maka kita harus men-setup NAT pada kedua device tersebut. Setelah kita men-setup NAT, maka kita tidak perlu lagi mengkonfigurasikan ip address pada kedua device tersebut. Berikut ini adalah langkah - langkahnya.
 
@@ -108,14 +108,14 @@ Agar kedua device dapat saling terhubung dan dapat terkoneksi dengan internet ma
 4. Pada bagian Attached to pilih **NAT Network**. Kemudian pilih NAT yang sudah kita buat tadi.
 5. Klik **OK**
 
-## Instalasi Wordpress
+#### C. Instalasi Wordpress
 
 Referensi
 - [How To Install Wordpress on Ubuntu 14.04](https://www.digitalocean.com/community/tutorials/how-to-install-wordpress-on-ubuntu-14-04).
 - [How To Install Linux, Apache, MySQL, PHP (LAMP) stack on Ubuntu 16.04](https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-ubuntu-16-04).
 - [How to Install WordPress 4.7 On Ubuntu 16.10/16.04 Using LAMP Stack](https://www.tecmint.com/install-wordpress-on-ubuntu-16-04-with-lamp/).
 
-Langkah-Langkah Instalasi Wordpress
+**Langkah-Langkah Instalasi Wordpress**
 1. Lakukan update terlebih dahulu `sudo apt-get update`
 2. Install Apache `sudo apt-get install apache2`
 3. Set Global ServerName agar server berjalan sesuai dengan alamat IP yang kita definisikan. Buka `/etc/apache2/apache2.conf` lalu tambahkan ServerName localhost agar server berjalan di local
@@ -163,26 +163,27 @@ sudo chmod -R 755 /var/www/html/
 23. Pada browser buka halaman `localhost/wp-admin/setup-config.php`
 24. Masukkan Database name, Database username, Database password dan Database host sesuai dengan yang dibuat sebelumnya
 
-## Instalasi Video Player 1.5.16
+#### D. Instalasi Video Player 1.5.16
 1. Download plugin pada link *https://wordpress.org/plugins/player/advanced/*
 2. Pada bagian Previous Version, pilih versi **1.5.16**
 3. Klik tombol **Download**
 4. Ekstrak plugin ke /var/www/html/wp-content/plugins dengan perintah `unzip player.1.5.16.zip -d /var/www/html/wp-content/plugins`
 
-## Instalasi LeagueManager 3.9.1.1
+#### E. Instalasi LeagueManager 3.9.1.1
 1. Buka link plugin pada *https://wordpress.org/plugins/leaguemanager/advanced/*
 2. Pada bagian Previous Version, pilih versi **3.9.1.1**
 3. Klik tombol **Download**
 4. Ekstrak plugin ke /var/www/html/wp-content/plugins dengan perintah `unzip leaguemanager.3.9.1.1.zip -d /var/www/html/wp-content/plugins`
 
-## Aktivasi Plugin
+#### F. Aktivasi Plugin
 1. Buka browser, masuk kehalaman http://localhost/wp-admin/plugins.php.
 2. Pada bagian plugin centang **LeagueManager** dan **Spider Video Player**.
 3. Kemuadian klik Activate lalu Apply.
 
-## Instalasi WPscan
+#### G. Instalasi WPscan
 
-## Instalasi sqlmap
+#### H. Instalasi Sqlmap
+
 
 Uji Coba Penetrasi <a name="uji"/>
 -----------------
