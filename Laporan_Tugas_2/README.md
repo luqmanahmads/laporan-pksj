@@ -91,7 +91,7 @@ Langkah selanjutnya adalah mengintalasi kali linux pada virtual mesin
 
 #### B. Instalasi Wordpress
 
-Referensi
+**Referensi**
 - [How To Install Wordpress on Ubuntu 14.04](https://www.digitalocean.com/community/tutorials/how-to-install-wordpress-on-ubuntu-14-04).
 - [How To Install Linux, Apache, MySQL, PHP (LAMP) stack on Ubuntu 16.04](https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-ubuntu-16-04).
 - [How to Install WordPress 4.7 On Ubuntu 16.10/16.04 Using LAMP Stack](https://www.tecmint.com/install-wordpress-on-ubuntu-16-04-with-lamp/).
@@ -165,14 +165,14 @@ sudo chmod -R 755 /var/www/html/
 #### F. Instalasi WPScan dan Sqlmap
 Dikarenakan kami menggunkan Sistem Operasi Kali Linux maka, **tidak perlu** lagi menginstall tools penetrasi karena sudah tersedia didalamnya. Akan tetapi jika anda menggukanan Linux versi yang lain seperti ubuntu, mint, xubuntu dan sejenisnya maka anda harus melalukan instalasi secara manual
 
-Langkah - Langkah Instalasi WPScan
+**Langkah - Langkah Instalasi WPScan**
 1. Instalasi dependensi menggunakan perintah `sudo apt-get install git libcurl4-openssl-dev libxml2 libxml2-dev libxslt1-dev ruby-dev build-essential libgmp-dev zlib1g-dev`
 2. Clone repository WPScan dari git `git clone https://github.com/wpscanteam/wpscan.git`.
 3. Masuk ke direktori WPScan `cd wpscan`.
 4. Lakukan instalasi dengan perintah `sudo gem install bundler && bundle install --without test development`.
 5. Jalankan aplikasi WPScan dengan perintah `ruby wpscan.rb`.
 
-Langkah - Langkah Instalasi Sqlmap
+**Langkah - Langkah Instalasi Sqlmap**
 1. Clone repository Sqlmap dari git `https://github.com/sqlmapproject/sqlmap.git`.
 2. Masuk ke direktori Sqlmap `cd sqlmap`
 3. Jalankan aplikasi WPScan dengan perintah `python sqlmap.py`.
@@ -195,7 +195,7 @@ Sebelum kita memulai Uji coba Sqlmap, terlebih dahulu kita harus mengisikan data
 4. Berikut ini adalah contoh dari hasil penambahan tersebut
 ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/leaguemanager.png "Result Leaguemanager")
 
-Langkah - Langkah Uji Coba
+**Langkah - Langkah Uji Coba**
 1. Buka terminal lalu ketikkan `sqlmap`
 2. Masukkan perintah `sqlmap --url="10.151.32.6/?season=2017&league_id=1" -p --dbs` untuk melihat daftar database apa saja yang ada
 3. Jika berhasil maka akan muncul database apa saja yang tersedia, contohnya seperti berikut :
