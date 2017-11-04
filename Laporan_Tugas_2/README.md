@@ -232,7 +232,7 @@ Kesimpulan dan Saran <a name="kesimpulan"/>
 Defense and Countermeasure <a name="countermeasures"/>
 ------------------
 
-#### Teknik Prepared Statements ( with Parameterized Queries)
+### Teknik Prepared Statements ( with Parameterized Queries)
 Parameterized Queries memaksa developer mendefinisikan seluruh kode SQL terlebih dahulu, kemudian setiap parameternya di-query setelah nya. Hal ini mengizinkan databases untuk membedakan antara code dan data. Apapun input pengguna akan diintepretasi sebagai data dan tidak diterjemahkan ke kode SQL. Karena keefektifannya, Teknik ini merupakan teknik yang seharusnya diajarkan terlebih dahulu kepada developer ketika memprogram aplikasi yang berinteraksi dengan database.
 
 Parameterized Queries untuk beberapa bahasa pemrograman adalah sebagai berikut.
