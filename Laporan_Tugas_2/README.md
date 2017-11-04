@@ -7,6 +7,7 @@
 ### [Uji Coba Penetrasi](#uji)
 ### [Kesimpulan dan Saran](#kesimpulan)
 ### [Defenses and Countermeasures](#countermeasures)
+### [Referensi](#referensi)
 
 ----------------------
 Pendahuluan <a name="pendahuluan"/>
@@ -101,12 +102,6 @@ Langkah selanjutnya adalah mengintalasi kali linux pada virtual mesin
 4. Lakukan Instalasi Kali Linux pada umumnya, kita bisa memilih opsi **Graphical install** untuk lebih memudahkan dalam proses penginstallan
 
 #### B. Instalasi Wordpress
-
-**Referensi**
-- [How To Install Wordpress on Ubuntu 14.04](https://www.digitalocean.com/community/tutorials/how-to-install-wordpress-on-ubuntu-14-04).
-- [How To Install Linux, Apache, MySQL, PHP (LAMP) stack on Ubuntu 16.04](https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-ubuntu-16-04).
-- [How to Install WordPress 4.7 On Ubuntu 16.10/16.04 Using LAMP Stack](https://www.tecmint.com/install-wordpress-on-ubuntu-16-04-with-lamp/).
-- [WPScan Install on Ubuntu](https://hackertarget.com/wpscan-install-ubuntu/).
 
 **Langkah-Langkah Instalasi Wordpress**
 1. Lakukan update terlebih dahulu `sudo apt-get update`
@@ -226,8 +221,11 @@ Kesimpulan dan Saran <a name="kesimpulan"/>
 -----------------
 
 #### Kesimpulan
-1. Dengan memanfaatkan Tools WPScan kita dapat mengetahui plugin-plugin yang dapat menjadi celah untuk melakukan serangan pada wordpress
-2. Tools Sqlmap dapat digunkan untuk mencuri informasi yang ada pada database server dengan memanfaatkan vulnerability plugin yang ada pada wordpress 
+- Dengan memanfaatkan Tools WPScan kita dapat mengetahui plugin-plugin yang dapat menjadi celah untuk melakukan serangan pada wordpress
+- Tools Sqlmap dapat digunakan untuk mencuri informasi yang ada pada database server dengan memanfaatkan vulnerability plugin yang ada pada wordpress 
+
+#### Saran
+- Perbaharui plugin - plugin yang digunakan agar dapat mengurangi resiko terhadap bugs yang ada
 
 Defense and Countermeasure <a name="countermeasures"/>
 ------------------
@@ -331,3 +329,11 @@ NUL (0x00) --> \0  [This is a zero, not the letter O]
  all other non-alphanumeric characters with ASCII values less than 256  --> \c
  where 'c' is the original non-alphanumeric character.
 ``` 
+
+Referensi <a name="referensi"/>
+-----------------
+- [How To Install Wordpress on Ubuntu 14.04](https://www.digitalocean.com/community/tutorials/how-to-install-wordpress-on-ubuntu-14-04).
+- [How To Install Linux, Apache, MySQL, PHP (LAMP) stack on Ubuntu 16.04](https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-ubuntu-16-04).
+- [How to Install WordPress 4.7 On Ubuntu 16.10/16.04 Using LAMP Stack](https://www.tecmint.com/install-wordpress-on-ubuntu-16-04-with-lamp/).
+- [WPScan Install on Ubuntu](https://hackertarget.com/wpscan-install-ubuntu/).
+- [Perform Sql Injection Attack With Kali Linux Sqlmap - Php Vulnerable Point Finder And Website Hacker](https://www.youtube.com/watch?v=F5o903DHq0U).
