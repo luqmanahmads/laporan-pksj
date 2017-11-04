@@ -9,7 +9,17 @@
 
 ----------------------
 Pendahuluan <a name="pendahuluan"/>
------------------
+----------------------
+
+Saat ini, penggunaan aplikasi berbasis web merupakan sesuatu yang umum dijumpai di masyarakat modern. Aplikasi web untuk keperluan media sosial seperti facebook, twitter, dan linkedin memiliki pengguna harian mencapai 1 miliar pengguna per hari. Aplikasi chatting whatsapp melaporkan memiliki pengguna harian mencapai 1 miliar per hari pada pertengahan 2017.
+
+Dibalik kepopulerannya tersebut, aplikasi web memanfaatkan teknologi komunikasi server dan client pada jaringan internet. Server merupakan entitas  yang bertugas memberikan layanan sedangkan client merupakan entitas yang melakukan permintaan layanan. Server memberikan layanan berupa pengoperasian (seperti operasi perhitungan atau pengambilan kesimpulan ) atau data ( pencarian atau penyimpanan data ). Permintaan layanan client dan pemberian layanan server disalurkan melalui jaringan internet.
+
+Sayangnya, penggunaan internet sebagai jalur komunikasi pada aplikasi web menyebabkan komunikasi pada aplikasi web tidak sepenuhnya aman. Hal ini disebabkan oleh jaringan internet yang bersifat terbuka. Sifat keterbukaan ini memudahkan siapapun untuk menggunakan jaringan internet, namun juga membuka kesempatan bagi pihak yang tidak berkepentingan.
+
+Salah satu ancaman keamanan aplikasi web adalah SQL Injection. SQL Injection merupakan teknik memanipulasi permintaan layanan seolah - olah attacker melakukan permintaan normal, namun server menerjemahkannya sebagai syntax SQL untuk mengakses database. Akibatnya attacker dapat mengakses database server tanpa validasi dari aplikasi server. Hal ini dapat menyebakabkan tereksposenya data yang tidak semestinya seorang pengguna miliki.
+
+Untuk itu, kami melakukan pengamatan SQL Injection dan cara menanganinya. Kami menggunakan wordpress untuk memudahkan pembuatan aplikasi web dan menginstall plug-in yang rawan terhadap serangan SQL Injection. Untuk mensimulasikan serangan kami menggunakan tools WPScan dan sqlmap yang telah tersedia pada Kali Linux OS. WPScan berguna untuk mendeteksi plug-in yang rawan terhadap SQL Injection dan sqlmap berguna untuk melakukan serangan SQL Injection.
 
 Dasar Teori <a name="teori"/>
 -----------------
