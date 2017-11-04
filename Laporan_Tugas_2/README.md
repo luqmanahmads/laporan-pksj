@@ -232,7 +232,7 @@ Kesimpulan dan Saran <a name="kesimpulan"/>
 Defense and Countermeasure <a name="countermeasures"/>
 ------------------
 
-##### Teknik Prepared Statements ( with Parameterized Queries)
+#### Teknik Prepared Statements ( with Parameterized Queries)
 Parameterized Queries memaksa developer mendefinisikan seluruh kode SQL terlebih dahulu, kemudian setiap parameternya di-query setelah nya. Hal ini mengizinkan databases untuk membedakan antara code dan data. Apapun input pengguna akan diintepretasi sebagai data dan tidak diterjemahkan ke kode SQL. Karena keefektifannya, Teknik ini merupakan teknik yang seharusnya diajarkan terlebih dahulu kepada developer ketika memprogram aplikasi yang berinteraksi dengan database.
 
 Parameterized Queries untuk beberapa bahasa pemrograman adalah sebagai berikut.
@@ -285,7 +285,7 @@ String custname = request.getParameter("customerName"); // This should REALLY be
 
 ### White List Input Validation
 
-Beberapa bagian SQL Queries tidak dapat digunakan pada variable binding (parameterized queries) seperti nama tabel, kolom, sort order indicator (ASC dan DESC). Pada situasi perlu dilakukan validasi input. Untuk nama tabel dan kolom sebaiknya dipilih melalui kode program, bukan berdasarkan input user. User parameter values digunakan untuk memilih nama table atau kolom, kemudian user parameter values harus dimapping ke suatu nama table atau kolom.
+Beberapa bagian SQL Queries tidak dapat digunakan pada variable binding (parameterized queries) seperti nama tabel, kolom, sort order indicator (ASC dan DESC). Pada situasi ini, perlu dilakukan validasi input. Untuk nama tabel dan kolom sebaiknya dipilih melalui kode program, bukan berdasarkan input user. User parameter values digunakan untuk memilih nama table atau kolom, kemudian user parameter values harus dimapping ke suatu nama table atau kolom.
 
 Berikut ini validasi nama table sebelum dilakukan query.
 
@@ -300,6 +300,7 @@ String tableName;
    default      : throw new InputValidationException("unexpected value provided for table name");
 ```
 
+Untuk validasi sort order, sebaiknya menggunakan tipe data boolean sebagai input user daripada menggunakan string value 'ASC' atau 'DESC' secara langsung.
 Contoh validasi sort order.
 
 ```java
