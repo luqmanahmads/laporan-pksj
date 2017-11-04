@@ -6,6 +6,7 @@
 ### [Instalasi](#install)
 ### [Uji Coba Penetrasi](#uji)
 ### [Kesimpulan dan Saran](#kesimpulan)
+### [Defenses and Countermeasures](#countermeasures)
 
 ----------------------
 Pendahuluan <a name="pendahuluan"/>
@@ -228,18 +229,20 @@ Kesimpulan dan Saran <a name="kesimpulan"/>
 1. Dengan memanfaatkan Tools WPScan kita dapat mengetahui plugin-plugin yang dapat menjadi celah untuk melakukan serangan pada wordpress
 2. Tools Sqlmap dapat digunkan untuk mencuri informasi yang ada pada database server dengan memanfaatkan vulnerability plugin yang ada pada wordpress 
 
-#### Defense and Countermeasure
+Defense and Countermeasure <a name="countermeasures"/>
+------------------
 
-### Teknik Prepared Statements ( with Parameterized Queries)
+##### Teknik Prepared Statements ( with Parameterized Queries)
 Parameterized Queries memaksa developer mendefinisikan seluruh kode SQL terlebih dahulu, kemudian setiap parameternya di-query setelah nya. Hal ini mengizinkan databases untuk membedakan antara code dan data. Apapun input pengguna akan diintepretasi sebagai data dan tidak diterjemahkan ke kode SQL. Karena keefektifannya, Teknik ini merupakan teknik yang seharusnya diajarkan terlebih dahulu kepada developer ketika memprogram aplikasi yang berinteraksi dengan database.
 
 Parameterized Queries untuk beberapa bahasa pemrograman adalah sebagai berikut.
-- Java EE – use PreparedStatement() with bind variables
-- .NET – use parameterized queries like SqlCommand() or OleDbCommand() with bind variables
-- PHP – use PDO with strongly typed parameterized queries (using bindParam())
-- Hibernate - use createQuery() with bind variables (called named parameters in Hibernate)
+- Java EE – menggunakan PreparedStatement()
+- .NET – menggunakan SqlCommand() atau OleDbCommand()
+- PHP – menggunakan PDO dengan parameterized queries (using bindParam())
+- Hibernate - mengunakan createQuery() dengan variable binding (called named parameters in Hibernate)
 
 Contoh penggunaan Parameterized Queries pada java
+
 unsafe example :
 
 ```java
@@ -262,3 +265,68 @@ String custname = request.getParameter("customerName"); // This should REALLY be
  pstmt.setString( 1, custname); 
  ResultSet results = pstmt.executeQuery( );
 ```
+
+### Menggunakan Stored Procedure
+Stored Procedure memiliki mekanisme eksekusi yang sama dengan parameterized queries. Namun, penggunaan stored procedure dapat menjadi tidak aman jika menggunakan unsafe dynamic SQL generation. 
+
+Berikut ini merupakan contoh penggunakan stored procedure yang aman pada java.
+
+```java
+String custname = request.getParameter("customerName"); // This should REALLY be validated
+ try {
+ 	CallableStatement cs = connection.prepareCall("{call sp_getAccountBalance(?)}");
+ 	cs.setString(1, custname);
+ 	ResultSet results = cs.executeQuery();		
+ 	// … result set handling 
+ } catch (SQLException se) {			
+ 	// … logging and error handling
+ }
+```
+
+### White List Input Validation
+
+Beberapa bagian SQL Queries tidak dapat digunakan pada variable binding (parameterized queries) seperti nama tabel, kolom, sort order indicator (ASC dan DESC). Pada situasi perlu dilakukan validasi input. Untuk nama tabel dan kolom sebaiknya dipilih melalui kode program, bukan berdasarkan input user. User parameter values digunakan untuk memilih nama table atau kolom, kemudian user parameter values harus dimapping ke suatu nama table atau kolom.
+
+Berikut ini validasi nama table sebelum dilakukan query.
+
+```java
+String tableName;
+ switch(PARAM):
+   case "Value1": tableName = "fooTable";
+                  break;
+   case "Value2": tableName = "barTable";
+                  break;
+     ...
+   default      : throw new InputValidationException("unexpected value provided for table name");
+```
+
+Contoh validasi sort order.
+
+```java
+public String someMethod(boolean sortOrder) {
+ 
+ String SQLquery = "some SQL ... order by Salary " + (sortOrder ? "ASC" : "DESC");
+ ...
+```
+
+### Escaping All User Input
+
+Teknik ini digunakan sebagai lapisan terakhir dalam penanganan SQL Injection jika ketiga teknik diatas tidak bekerja efektif. Teknik ini mengandalkan escape operator yang sangat bergantung dari jenis database yang digunakan. Setiap user input diberikan escape operator sebelum dimasukkan ke dalam string query.
+
+Berikut ini beberapa contoh escape operator pada database mysql.
+
+```
+NUL (0x00) --> \0  [This is a zero, not the letter O]
+ BS  (0x08) --> \b
+ TAB (0x09) --> \t
+ LF  (0x0a) --> \n
+ CR  (0x0d) --> \r
+ SUB (0x1a) --> \Z
+ "   (0x22) --> \"
+ %   (0x25) --> \%
+ '   (0x27) --> \'
+ \   (0x5c) --> \\
+ _   (0x5f) --> \_ 
+ all other non-alphanumeric characters with ASCII values less than 256  --> \c
+ where 'c' is the original non-alphanumeric character.
+``` 
