@@ -228,6 +228,37 @@ Kesimpulan dan Saran <a name="kesimpulan"/>
 1. Dengan memanfaatkan Tools WPScan kita dapat mengetahui plugin-plugin yang dapat menjadi celah untuk melakukan serangan pada wordpress
 2. Tools Sqlmap dapat digunkan untuk mencuri informasi yang ada pada database server dengan memanfaatkan vulnerability plugin yang ada pada wordpress 
 
-#### Defense
+#### Defense and Countermeasure
 
-#### Countermeasure
+### Teknik Prepared Statements ( with Parameterized Queries)
+Parameterized Queries memaksa developer mendefinisikan seluruh kode SQL terlebih dahulu, kemudian setiap parameternya di-query setelah nya. Hal ini mengizinkan databases untuk membedakan antara code dan data. Apapun input pengguna akan diintepretasi sebagai data dan tidak diterjemahkan ke kode SQL. Karena keefektifannya, Teknik ini merupakan teknik yang seharusnya diajarkan terlebih dahulu kepada developer ketika memprogram aplikasi yang berinteraksi dengan database.
+
+Parameterized Queries untuk beberapa bahasa pemrograman adalah sebagai berikut.
+- Java EE – use PreparedStatement() with bind variables
+- .NET – use parameterized queries like SqlCommand() or OleDbCommand() with bind variables
+- PHP – use PDO with strongly typed parameterized queries (using bindParam())
+- Hibernate - use createQuery() with bind variables (called named parameters in Hibernate)
+
+Contoh penggunaan Parameterized Queries pada java
+unsafe example :
+
+```java
+String query = "SELECT account_balance FROM user_data WHERE user_name = "
+   + request.getParameter("customerName");
+ 
+ try {
+ 	Statement statement = connection.createStatement( … );
+ 	ResultSet results = statement.executeQuery( query );
+ }
+```
+with parameterized queries example : 
+
+```java
+String custname = request.getParameter("customerName"); // This should REALLY be validated too
+ // perform input validation to detect attacks
+ String query = "SELECT account_balance FROM user_data WHERE user_name = ? ";
+ 
+ PreparedStatement pstmt = connection.prepareStatement( query );
+ pstmt.setString( 1, custname); 
+ ResultSet results = pstmt.executeQuery( );
+```
