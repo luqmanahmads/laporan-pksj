@@ -1,6 +1,6 @@
 # Anggota
-1. Muhamad Hendri Febriansyah 		5114100036
-2. Luqman Ahmad 					5114100187
+1. 5114100036 Muhamad Hendri Febriansyah 		
+2. 5114100187 Luqman Ahmad 					
 
 # Laporan
 - [Tugas 1 - SSH Brute Force](https://github.com/luqmanahmads/laporan-pksj/blob/master/Laporan_Tugas_1/README.md)
