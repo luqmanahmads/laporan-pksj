@@ -7,22 +7,22 @@
 ## SQL Injection: Single Quote Test On Username Field
 
 - Pergi kehalaman login
-- Set Security Level menjadi 0 (Hosed)
-- Tes penggunaan Single Qoute (')
-Pada kolom textbox **Name** isikan single quote ('), lalu klik tombol login
-- Analisis Single Quote Result
+- Set Security Level menjadi **level 0 (Hosed)**
+- Tes penggunaan Single Qoute (')  
+Pada kolom Textbox **Name** isikan single quote ('), lalu klik tombol login
+- Analisis Single Quote Result  
 Jika pada bagian **username** isinya berupa single quote (') maka dapat dipastikan program backend rentan terhadap sql injection
 
-  - Pada bagian message query yang dihasilkan:
+  - Pada bagian message query yang dihasilkan:  
   `SELECT * FROM accounts WHERE username=''' AND password=''`
 
-  - Query pada umumnya:
+  - Query pada umumnya:  
   `SELECT * FROM accounts WHERE username='admin' AND password='adminpass'`
 
 ## SQL Injection: By-Pass Password Without Username (Obtain Access #1)
-- Pada kolom textbox **Name** isikan **`' or 1=1 -- `**
+- Pada kolom Textbox **Name** isikan **`' or 1=1 -- `**
 - Pastikan anda menambahkan spasi setelah karakter **--**
-- Kolom textbox Password tidak perlu diisikan
+- Kolom Textbox Password tidak perlu diisikan
 - Klik tombol Login
 
 **Note:**
