@@ -13,11 +13,11 @@ Pada kolom textbox **Name** isikan single quote ('), lalu klik tombol login
 - Analisis Single Quote Result
 Jika pada bagian **username** isinya berupa single quote (') maka dapat dipastikan program backend rentan terhadap sql injection
 
-  - Pada bagian message query yang dihasilkan
-	`SELECT * FROM accounts WHERE username=''' AND password=''`
+  - Pada bagian message query yang dihasilkan:
+  `SELECT * FROM accounts WHERE username=''' AND password=''`
 
-  - Query pada umumnya
-	`SELECT * FROM accounts WHERE username='admin' AND password='adminpass'`
+  - Query pada umumnya:
+  `SELECT * FROM accounts WHERE username='admin' AND password='adminpass'`
 
 ## SQL Injection: By-Pass Password Without Username (Obtain Access #1)
 - Pada kolom textbox **Name** isikan **`' or 1=1 -- `**
@@ -25,4 +25,7 @@ Jika pada bagian **username** isinya berupa single quote (') maka dapat dipastik
 - Kolom textbox Password tidak perlu diisikan
 - Klik tombol Login
 
-Note: Jika terjadi error, maka analisis error messagenya. Pada contoh ini errornya terjadi karena table account yang ada di database metasploit tidak ada. Untuk mengatasi hal tersebut lakukan konfigurasi pada multilade yang ada di metasploit.
+**Note:**
+> Jika terjadi error, maka analisis error messagenya. 
+> Pada contoh ini errornya terjadi karena table account yang ada di database metasploit tidak ada. Untuk mengatasi hal tersebut lakukan konfigurasi pada multilade yang ada di metasploit.
+> [Konfigurasi multillidae](https://github.com/luqmanahmads/laporan-pksj/blob/master/Laporan_Tugas_Besar/konfigurasi_multillidae.md)
