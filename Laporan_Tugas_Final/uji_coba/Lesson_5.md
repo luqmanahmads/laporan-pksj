@@ -21,7 +21,7 @@
 ## SQL Injection: By-Pass Password Without Username (Obtain Access #1)
 1. Login Tanpa Menggunakan Password
    - Pada kolom Textbox **Name** isikan **`' or 1=1 -- `**
-   - Pastikan anda menambahkan spasi setelah karakter **--**
+   - Pastikan anda menambahkan spasi setelah karakter **`--`**
    - Klik tombol Login
 2. Verifikasi Result
    - Perhatikan anda login sebagai apa. Berdasarkan desain code Multillade, anda akan login sebagai admin. Hal tersebut terjadi karena admin adalah user pertama yang ada pada tabel accounts
@@ -58,7 +58,7 @@
    - Replace string password menjadi text
 3. Berikan Kondisi Selalu True pada kolom Textbox Password
    - Pada kolom Textbox Password isikan **`' or 1=1 -- `**
-   - Pastikan anda menambahkan spasi setelah karakter **--**
+   - Pastikan anda menambahkan spasi setelah karakter **`--`**
    - Klik tombol Login
 4. Verifikasi Result
    - Berdasarkan desain code Multillade, anda akan login sebagai admin. Hal tersebut terjadi karena admin adalah user pertama yang ada pada tabel accounts
@@ -74,7 +74,7 @@
    - Pada bagian size dan maxlength tambahkan kapasistasnya dari yg semula 20 menjadi 50
 3. Berikan Kondisi Selalu True pada kolom Textbox Password
    - Pada kolom Textbox Password isikan **`' or (1=1 and username='samurai')--`**
-   - Pastikan anda menambahkan spasi setelah karakter **--**
+   - Pastikan anda menambahkan spasi setelah karakter **`--`**
    - Klik tombol Login
 4. Verifikasi Result
    - Anda akan login sebagai samurai
