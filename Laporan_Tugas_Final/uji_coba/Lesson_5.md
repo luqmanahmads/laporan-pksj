@@ -61,11 +61,11 @@
    - Pada kolom Textbox Password isikan **`' or 1=1 -- `**
    - Pastikan anda menambahkan spasi setelah karakter **`--`**
    - Klik tombol Login
-![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_5/1/replace_with_string.png "True condition")
+![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_5/2/replace_with_string.png "True condition")
 4. Verifikasi Result
    - Berdasarkan desain code Multillade, anda akan login sebagai admin. Hal tersebut terjadi karena admin adalah user pertama yang ada pada tabel accounts
    - Akan tetapi, disini tujuan kita adalah login sebagai user samurai, bukan sebagai admin
-![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_5/1/result.png "Result")
+![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_5/2/result.png "Result")
 
 ## SQL Injection: Single Quote Test On Password Field (Obtain Access #3)
 1. Inspect Password Box Element
@@ -79,5 +79,7 @@
    - Pada kolom Textbox Password isikan **`' or (1=1 and username='samurai')--`**
    - Pastikan anda menambahkan spasi setelah karakter **`--`**
    - Klik tombol Login
+![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_5/2/login_as_samurai.png "True condition")
 4. Verifikasi Result
    - Anda akan login sebagai samurai
+![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_5/3/result_login.png "Result")
