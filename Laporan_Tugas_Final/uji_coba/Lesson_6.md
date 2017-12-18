@@ -145,7 +145,7 @@ cat crack_cookies.txt
 ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_6/6/cookie_view.png "Home page")
 3. Add PHPSESSID Cookie Entry
    - Name: PHPSESSID
-   - Content: sesuai yang ada pada text crack_cookies.txt
+   - Content: 9bb112f7cbd1f361cec74b94466c9267
    - Host: 10.0.1.100
    - Path: /
    - Klik tombol Save
