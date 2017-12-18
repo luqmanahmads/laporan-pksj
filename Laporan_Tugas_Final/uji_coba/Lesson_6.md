@@ -2,35 +2,44 @@
 
 ## Start Web Browser Session to Multillidae
 - Buka browser kemudian akses Multillidae ip metasploit pada alamat http://10.0.1.100/mutillidae
+![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_6/1/start_browser.png "Home page")
+
 
 ## Go To Login Page
 - Buka halaman Login/Register
+![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_6/1/start_browser.png "Home page")
 
 ## Configure Firefox Proxy Settings
 1. View Preferences
    - Klik toggle menu yang ada di pojok kanan atas
    - Pilih Preferences
+![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_6/1/toggle_menu.png "Home page")
 2. Advanced Settings
    - Pilih menu Advanced
    - Pilih Network Tabs
    - Klik Setting
+![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_6/1/network_tab.png "Home page")
 3. Connection Settings
    - Gunakan manual proxy
    - Pada kolom HTTP Proxy isikan 127.0.0.1
    - Pada kolom Port 8080
    - Centang bagian Use the proxy server for all protocols 
    - Klik Ok, Kemudian Close
+![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_6/1/set_config_proxy.png "Home page")
 
 ## Configure Burpsuite Settings
 1. Buka Aplikasi Burpsuite
    - Akan muncul halaman aplikasi, pilih next
    - Use Burp defaults, kemudian klik start Burp
+![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_6/2/use_default.png "Home page")
 2. Configure proxy
    - Pilih tab proxy, kemudian options
    - Set port ke 8080 seperti berikut
+![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_6/2/proxy_port_8080.png "Home page")
 3. Turn on intercept
    - Pilih tab intercept
    - Pastikan intercept button dalam keadaan off "intercept is off"
+![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_6/2/intercept_off.png "Home page")
 
 ## SQL Injection: By-Pass Password Without Username (Obtain Access #1)
 1. Login Tanpa Menggunakan Password
@@ -44,6 +53,7 @@
    - Klik pada Tab Request
    - Klik pada Tab Raw
    - Perhatikan isi string pada username, string tersbut  akan digunakan untuk melancarkan serangan
+![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_6/3/result.png "Home page")
 
 ## Simulate CURL SQL Injection: (Obtain Access #1)
 1. Use Curl to Login with POST Data
@@ -58,6 +68,7 @@ grep "Logged In" login1.txt
 cat crack_cookies.txt
 ```
    - Session cookies akan disimpan pada file crack_cookies.txt
+![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_6/3/result_obtain_1.png "Home page")
 
 ## SQL Injection: Single Quote Test On Password Field (Obtain Access #2)
 1. Inspect Password Box Element
@@ -78,11 +89,12 @@ cat crack_cookies.txt
    - Klik pada Tab Request
    - Klik pada Tab Raw
    - Highligt text, kemudian klik kanan
-   - Klik "Copy to FIle"
+   - Klik "Copy to FIle" 
 5. Save File
    - Save file di : root
    - File Name: burp2.txt
    - Klik tombol Save
+![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_6/4/save_raw_data.png "Home page")
 6. View Post Data (With Burpsuite)
    - cd /root
    - Jalankan perintah berikut:
@@ -92,6 +104,7 @@ cat crack_cookies.txt
 ```bash
    grep -i username burp2.txt
 ```
+![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_6/4/run_command.png "Home page")
 
 Simulate cURL SQL Injection: (Obtain Access #2)
 1. Use Curl to Login with POST Data

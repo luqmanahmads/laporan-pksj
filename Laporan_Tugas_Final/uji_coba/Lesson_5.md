@@ -25,6 +25,8 @@
    - Klik tombol Login
 2. Verifikasi Result
    - Perhatikan anda login sebagai apa. Berdasarkan desain code Multillade, anda akan login sebagai admin. Hal tersebut terjadi karena admin adalah user pertama yang ada pada tabel accounts
+![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_5/1/result.png "Result")
+
 
 **Note:**
 ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_5/1/error_table_not_found.png "Error message")
