@@ -1,7 +1,7 @@
 # Lesson 5 : Manual SQL Injection with Firebug
 
-## Start Web Browser Session to Mutillidae
-- Buka Multilade pada browser dengan mengakses alamat http://10.0.1.101/mutillidae
+## Start Web Browser Session to Multillidae
+- Buka browser kemudian akses Multillidae sesuai ip metasploit pada alamat http://10.0.1.101/mutillidae
 
 
 ## SQL Injection: Single Quote Test On Username Field

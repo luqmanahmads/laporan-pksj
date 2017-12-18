@@ -1,7 +1,7 @@
 # Lesson 5 : SQL Injection, Burpsuite, cURL, Man-In-The-Middle Attack
 
-## Start Web Browser Session to Mutillidae
-- Buka Multilade pada browser dengan mengakses alamat http://10.0.1.100/mutillidae
+## Start Web Browser Session to Multillidae
+- Buka browser kemudian akses Multillidae ip metasploit pada alamat http://10.0.1.100/mutillidae
 
 ## Go To Login Page
 - Buka halaman Login/Register
@@ -38,7 +38,7 @@
    - Pastikan anda menambahkan spasi setelah karakter **`--`**
    - Klik tombol Login
 2. View Post Data (With Burp Suite)
-   - Klik pada Tab Proxy Tab
+   - Klik pada Tab Proxy
    - Klik pada Tab History
    - Klik cari line yang urlnya mengandung **/mutillidae/index.php?page=login.php** dengan Method POST
    - Klik pada Tab Request
@@ -85,7 +85,7 @@ cat crack_cookies.txt
    - Klik tombol Save
 6. View Post Data (With Burpsuite)
    - cd /root
-   - Jalankan perintah berikut
+   - Jalankan perintah berikut:
 ```bash
    grep -i cookie burp2.txt
 ```
