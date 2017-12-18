@@ -12,12 +12,11 @@
 ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_5/1/login_page.png "Login Page")
 4. Analisis Single Quote Result  
    - Jika pada bagian **username** isinya berupa single quote (') maka dapat dipastikan program backend rentan terhadap serangan sql injection
-![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_5/1/test_single_quote.png "Test single quote")
    - Pada bagian message query yang dihasilkan:  
    `SELECT * FROM accounts WHERE username=''' AND password=''`
-
    - Query pada umumnya:  
    `SELECT * FROM accounts WHERE username='admin' AND password='adminpass'`
+![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_5/1/test_single_quote.png "Test single quote")
 
 ## SQL Injection: By-Pass Password Without Username (Obtain Access #1)
 1. Login Tanpa Menggunakan Password
@@ -36,20 +35,20 @@
 ## SQL Injection: Single Quote Test On Password Field
 1. Inspect Password Box Element
    - Buka halaman Login/Register
-   - Pada kolom Name isikan samurai
-   - Pada kolom Password klik kanan, kemudian inspect element
+   - Pada kolom Textbox Name isikan samurai 
+   - Pada kolom Textbox Password klik kanan, kemudian inspect element
 2. Edit Password Box Element
    - Replace string password menjadi text
 3. Single Quote (') Test
    - Pada kolom Password isikan single quote ('), lalu klik tombol login
+![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_5/1/replace_password_to_string.png "To text")
 4. Analisis Single Quote Result
-    - Jika pada bagian **password** isinya berupa single quote (') maka dapat dipastikan program backend rentan terhadap serangan sql injection
-
+   - Jika pada bagian **password** isinya berupa single quote (') maka dapat dipastikan program backend rentan terhadap serangan sql injection
    - Pada bagian message query yang dihasilkan:  
    `SELECT * FROM accounts WHERE username='samurai AND password='''`
-
    - Query pada umumnya:  
    `SELECT * FROM accounts WHERE username='samurai' AND password='samurai'`
+![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_5/1/error_samurai.png "Error message")
 
 ## SQL Injection: Single Quote Test On Password Field (Obtain Access #2)
 1. Inspect Password Box Element
@@ -62,9 +61,11 @@
    - Pada kolom Textbox Password isikan **`' or 1=1 -- `**
    - Pastikan anda menambahkan spasi setelah karakter **`--`**
    - Klik tombol Login
+![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_5/1/replace_with_string.png "True condition")
 4. Verifikasi Result
    - Berdasarkan desain code Multillade, anda akan login sebagai admin. Hal tersebut terjadi karena admin adalah user pertama yang ada pada tabel accounts
    - Akan tetapi, disini tujuan kita adalah login sebagai user samurai, bukan sebagai admin
+![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_5/1/result.png "Result")
 
 ## SQL Injection: Single Quote Test On Password Field (Obtain Access #3)
 1. Inspect Password Box Element
