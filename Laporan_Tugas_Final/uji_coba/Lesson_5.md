@@ -41,14 +41,14 @@
    - Replace string password menjadi text
 3. Single Quote (') Test
    - Pada kolom Password isikan single quote ('), lalu klik tombol login
-![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_5/1/replace_password_to_string.png "To text")
+![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_5/2/replace_password_to_string.png "To text")
 4. Analisis Single Quote Result
    - Jika pada bagian **password** isinya berupa single quote (') maka dapat dipastikan program backend rentan terhadap serangan sql injection
    - Pada bagian message query yang dihasilkan:  
    `SELECT * FROM accounts WHERE username='samurai AND password='''`
    - Query pada umumnya:  
    `SELECT * FROM accounts WHERE username='samurai' AND password='samurai'`
-![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_5/1/error_samurai.png "Error message")
+![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_5/2/error_samurai.png "Error message")
 
 ## SQL Injection: Single Quote Test On Password Field (Obtain Access #2)
 1. Inspect Password Box Element
@@ -79,7 +79,7 @@
    - Pada kolom Textbox Password isikan **`' or (1=1 and username='samurai')--`**
    - Pastikan anda menambahkan spasi setelah karakter **`--`**
    - Klik tombol Login
-![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_5/2/login_as_samurai.png "True condition")
+![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_5/3/login_as_samurai.png "True condition")
 4. Verifikasi Result
    - Anda akan login sebagai samurai
 ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_5/3/result_login.png "Result")
