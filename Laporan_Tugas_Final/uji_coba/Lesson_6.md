@@ -15,14 +15,14 @@
    - Pilih Preferences
 ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_6/1/toggle_menu.png "Home page")
 2. Advanced Settings
-   - Pilih menu Advanced
+   - Pilih Menu Advanced
    - Pilih Network Tabs
-   - Klik Setting
+   - Pilih Settings
 ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_6/1/network_tab.png "Home page")
 3. Connection Settings
    - Gunakan manual proxy
-   - Pada kolom HTTP Proxy isikan 127.0.0.1
-   - Pada kolom Port 8080
+   - Pada kolom HTTP Proxy isikan **127.0.0.1**
+   - Pada kolom Port **8080**
    - Centang bagian Use the proxy server for all protocols 
    - Klik Ok, Kemudian Close
 ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_6/1/set_config_proxy.png "Home page")
@@ -91,8 +91,8 @@ cat crack_cookies.txt
    - Highligt text, kemudian klik kanan
    - Klik "Copy to FIle" 
 5. Save File
-   - Save file di : root
-   - File Name: burp2.txt
+   - Save file di dalam folder **root**
+   - File Name: **burp2.txt**
    - Klik tombol Save
 ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_6/4/save_raw_data.png "Home page")
 6. View Post Data (With Burpsuite)
@@ -137,4 +137,27 @@ Simulate cURL SQL Injection: (Obtain Access #2)
 
 ## Simulate Man-In-The-Middle Attack
 1. Start Cookies Manager+
+   - Pilih tab Tools > Cookies Manager+ > Klik Cookies Manager+
 2. Add Cookie Entry
+   - Klik New Cookie
+3. Add PHPSESSID Cookie Entry
+   - Name: PHPSESSID
+   - Content: sesuai yang ada pada text crack_cookies.txt
+   - Host: 10.0.1.100
+   - Path: /
+   - Klik tombol Save
+4. Add username Cookie Entry
+   - Name: username
+   - Content: samurai
+   - Host: 10.0.1.100
+   - Path: /mutillidae/
+   - Klik tombol Save
+5. Add uid Cookie Entry
+   - Name: uid
+   - Content: 6
+   - Host: 10.0.1.100
+   - Path: /mutillidae/
+   - Klik tombol Save
+6. Verifikasi Result
+   - Buka halaman http://10.0.1.100/mutillidae/index.php
+   - Jika berhasil, anda akan login sebagai samurai
