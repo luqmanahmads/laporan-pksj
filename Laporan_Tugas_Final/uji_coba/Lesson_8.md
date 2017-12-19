@@ -1,4 +1,4 @@
-# Lesson 7 : SQL Injection, Burpsuite, cURL, Perl Parser
+# Lesson 8 : SQL Injection Union Exploit #1
 
 ## Start Web Browser Session to Multillidae
 - Buka browser kemudian akses Multillidae sesuai ip metasploit pada alamat http://10.0.1.100/mutillidae
@@ -64,7 +64,6 @@
 4. Viewing the Results
 	- Scroll kebawah untuk melihat pesan errornya
 	- Perhatikan pesan errornya
-
 
 ## SQL Injection (Union Example #3)
 1. Inspect the Name Textbox with Firebug
