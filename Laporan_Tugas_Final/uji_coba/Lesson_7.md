@@ -1,4 +1,4 @@
-# Lesson 5 : SQL Injection, Burpsuite, cURL, Perl Parser
+# Lesson 7 : SQL Injection, Burpsuite, cURL, Perl Parser
 
 ## Start Web Browser Session to Multillidae
 - Buka browser kemudian akses Multillidae sesuai ip metasploit pada alamat http://10.0.1.100/mutillidae
@@ -6,11 +6,11 @@
 
 ## Go To User Info Page
 1. Go to User Info
-	- 
+   - OWASP Top 10 --> A1 - SQL Injection --> SQLi - Extract Data --> User Info 
 
 ## Configure Firefox Proxy Settings
 1. View Preferences
-- Edit --> Preferences
+   - Edit --> Preferences
 2. Advanced Settings
    - Pilih Menu Advanced
    - Pilih Network Tabs
@@ -47,7 +47,7 @@
 2. View Results
 	- Halaman selanjutnya akan memuat kumpulan data table account yang berupa username, password dan signature
 	- Perhatikan string yang ada pada url yang di hightlight '+or+1%3D1--+
-2. View Post Data (With Burp Suite)
+3. View Post Data (With Burp Suite)
    - Klik pada Tab Proxy
    - Klik pada Tab History
    - Klik cari line yang urlnya mengandung **/mutillidae/index.php?page=user-info.php** dengan Method GET
@@ -58,7 +58,7 @@
 ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_6/3/result.png "Home page")
    - Highligt text, kemudian klik kanan
    - Klik "Copy to File" 
-5. Save File
+4. Save File
    - Save file di dalam folder **root**
    - File Name: **crack_cookies2.txt**
    - Klik tombol Save
