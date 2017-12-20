@@ -13,7 +13,7 @@ quit
 
 # Konfigurasi Database Mutillidae
 - Buka konfigurasi databases pada mutillidae yang ada pada metasploit
-- Ketikkan `nano /var/www/mutillidae/config.inc`
+- Ketikkan `nano /var/www/mutillidae/config.inc` pada terminal
 - Default configurasi pada mutillidae adalah seperti berikut:
 ```php
 <?php
@@ -25,7 +25,7 @@ quit
     $dbname = 'metasploit';
 ?>
 ```
-- Ganti database yang digunakan (metasploit) menjadi **owasp10** (database yang sudah disediakan untuk sql injection)
+- Ganti database yang digunakan (metasploit) menjadi **owasp10** (database yang sudah disediakan untuk sql injection) dan tambahkan password **saitama**
 ```php
 <?php
     /* NOTE: On Samurai, the $dbpass password is "samurai" rather than blank */

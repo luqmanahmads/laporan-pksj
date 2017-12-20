@@ -1,6 +1,6 @@
 # Konfigurasi AppArmor
 
-- Buka Terminal pada mutillidae
+- Buka terminal pada metasploit
 - Cek status profile Apparmor yang sedang berjalan dengan menggunakan perintah: 
   ```bash
   sudo aa-status
