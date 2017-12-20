@@ -27,7 +27,7 @@
 ## Using the Backdoor for Basic Reconnaissance
 1. Initial Reconnaissance
 	- Buka url berikut pada browser 
-	http://192.168.1.111/mutillidae/execute_command.php
+	http://10.0.1.100/mutillidae/execute_command.php
 	- Ketikkan perintah berikut pada textbox
 	  ```whoami; pwd```
 	- Klik tombol Execute Command
