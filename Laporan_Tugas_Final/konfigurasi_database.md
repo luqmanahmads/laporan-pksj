@@ -1,7 +1,7 @@
 # Ubah Settingan Database
 - Buka terminal pada metasploit
 - Ubah password database mysql menjadi **saitama** dengan mengetikkan perintah-perintah berikut
-```
+```mysql
 mysql -u root -p
 use mysql;
 update user set password=PASSWORD('saitama') where User='root';
