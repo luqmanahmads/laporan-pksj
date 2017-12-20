@@ -8,7 +8,7 @@
 1. Buka halaman Login/Register
 2. Set Security Level menjadi **level 0 (Hosed)**
 3. Tes penggunaan Single Qoute (')  
-   - Pada kolom Textbox **Name** isikan single quote ('), lalu klik tombol login
+   - Pada kolom textbox **Name** isikan single quote ('), lalu klik tombol login
 ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_5/1/login_page.png "Login Page")
 4. Analisis Single Quote Result  
    - Jika pada bagian **username** isinya berupa single quote (') maka dapat dipastikan program backend rentan terhadap serangan sql injection
@@ -20,7 +20,7 @@
 
 ## SQL Injection: By-Pass Password Without Username (Obtain Access #1)
 1. Login Tanpa Menggunakan Password
-   - Pada kolom Textbox **Name** isikan **`' or 1=1 -- `**
+   - Pada kolom textbox **Name** isikan **`' or 1=1 -- `**
    - Pastikan anda menambahkan spasi setelah karakter **`--`**
    - Klik tombol Login
 ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_5/tambahan/login_tanpa_pass.png "Test single quote")
@@ -63,7 +63,7 @@
 2. Edit Password Box Element
    - Replace string password menjadi text
 3. Berikan Kondisi Selalu True pada kolom Textbox Password
-   - Pada kolom Textbox Password isikan **`' or 1=1 -- `**
+   - Pada kolom textbox Password isikan **`' or 1=1 -- `**
    - Pastikan anda menambahkan spasi setelah karakter **`--`**
    - Klik tombol Login
 ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_5/2/replace_with_string.png "True condition")
