@@ -2,7 +2,7 @@
 
 ### [Instalasi Cuckoo](#instalasi)
 ### [Konfigurasi Cuckoo](#konfigurasi)
-### [Uji Coba](#ujicoba)
+### [Testing](#testing)
 
 -----------------------------
 Instalasi Cuckoo <a name="instalasi"/>
@@ -216,4 +216,80 @@ Kemudian buat snapshot pada saat menajalankan agent.py agar agent.py dalam kondi
 
 Pengaturan virtual machine sebagai guest telah selesai. Selanjutkan, kita akan melakukan konfigurasi cuckoo agar menjalankan virtual machine yang telah dibuat untuk proses analisa.
 
+-----------------------------
+Konfigurasi Cuckoo <a name="konfigurasi"/>
+-----------------------------
 
+Seluruh konfigurasi cuckoo terletak pada folder `.cuckoo/conf`. Kali ini kita akan melakukan konfigurasi virtualbox melalui file `.cuckoo/conf/virtualbox.conf`. Command berikut akan menampilkan seluruh option configuration dengan menghilangkan seluruh comment.
+
+```
+cat virtualbox.conf | grep -v ^# | grep -v
+```
+
+![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/cuckoo/7.png "virtualbox.conf")
+
+Konfigurasikan seperti gambar diatas.
+`mode = headlesss` mendefinisikan agar pemanggilan virtual machine berjalan di background
+`path = /usr/bin/VBoxManage` mendefinisikan direktori program yang menjalankan virtual machine
+`machine = WindowsXPSP3` mendefinisikan nama virtual machine
+`[WindowsXPSP3]` mendefinisikan blok konfigurasi untuk machine WindowsXPSP3
+`label = WindowsXPSP3` mendefinisikan nama virtual machine yang terdapat pada konfigurasi virtualbox
+`platform = windows` mendefiniskan platform os
+`ip = 192.168.56.101` mendefinisika alamat ip virtual machine.
+
+Save file `virtualbox.conf`.
+t
+Jalankan cuckoo host. Terlihat pada gambar cuckoo telah berhasil me-load virtual machine dan menunggu analysis task.
+
+![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/cuckoo/8.png "Cuckoo Run")
+
+Instalasi dan konfigurasi telah selesai. Selanjutnya kita akan mencoba menganalisis suatu malware menggunakan cuckoo
+
+-----------------------------
+Testing <a name="testing"/>
+-----------------------------
+
+Pada bagian ini, kita akan mencoba menganalisis malware menggunakan cuckoo. Kita akan mensubmit file malware melalui cuckoo web interface, mengamati apa terjadi pada virtual machine, dan melihat hasil analisa nya.
+
+Pertama - tama, kita membutuhkan file malware.
+File - file malware dapat diunduh di https://github.com/ytisf/theZoo/tree/master/malwares
+
+Kita akan menggunakan file Ransomware Petya.
+Download file Ransomware Petya dari link diatas kemudian extract.
+
+Jalankan cuckoo dengan command berikut.
+
+```
+cuckoo
+```
+
+Jalankan cuckoo web interface pada terminal lain.
+
+```
+cuckoo web
+```
+
+Akses alamat localhost:8000.
+Web interface akan terlihat seperti gambar berikut.
+
+![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/cuckoo/9.png "Cuckoo Web")
+
+Klik submit file for analysis. Pilih ransomware yang telah kita download tadi. Klik `analyze`.
+
+Cuckoo akan mulai menjalankan file ransomware pada guest.
+
+![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/cuckoo/10.png "Cuckoo Web")
+
+Setelah cuckoo selesai menganalisa, coba jalankan virtual machine melalui virtualbox gui untuk melihat dampak yang dihasilkan oleh ransomeware tersebut.
+
+Berikut ini dampak yang dihasilkan oleh ransomware petya.
+
+![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/cuckoo/13.png "Cuckoo Web")
+
+![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/cuckoo/14.png "Cuckoo Web")
+ 
+Untuk melihat analisa melalui web, pilih tab `recent`. Disana akan ditampilkan list analysis task yang telah dilakukan. Dengan menklik salah satu task, akan menampilkan hasil detail hasil analisa. 
+
+![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/cuckoo/11.png "Analysis Task")
+
+![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/cuckoo/12.png "Report")
