@@ -56,3 +56,7 @@
    - Pada address bar masukkan alamat url berikut http://10.0.1.100/mutillidae/CCN2.txt
    - Jika berhasil, maka akan tampil record data pada file CCN2.txt
 ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_9/ccn2.png "Home page")
+
+## Note
+- Agar file CNN2.txt dapat dibuat pada metasploit, pastikan anda sudah menonaktifkan apparmor
+- Konfigurasi untuk menonaktifkan AppArmor ada [disini](https://github.com/luqmanahmads/laporan-pksj/blob/master/Laporan_Tugas_Final/konfigurasi_apparmor.md)
