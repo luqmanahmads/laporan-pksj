@@ -199,5 +199,21 @@ Agar proses analisa berjalan lancar, Pastikan Windows Firewall dan Automatic Upd
 
 ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/cuckoo/4.png "Python Install")
 
-Kemudian copykan file agent/agent.py dari 
+Kemudian copykan script `agent.py` dari `.cuckoo/agent/agent.py` ke windows vitual machine. (dapat menggunakan sharedfolder atau membuat link download)
+Letakkan script `agent.py` didalam folder `C:\Python27`. Script ini berguna untuk komunikasi antara cuckoo host dengan guest.
+
+jalankan script `agent.py` dengan command berikut.
+
+```
+python.exe agent.py
+```
+
+![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/cuckoo/5.png "Agent")
+
+Kemudian buat snapshot pada saat menajalankan agent.py agar agent.py dalam kondisi run ketika virtual machine digunakan oleh cuckoo.
+
+![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/cuckoo/6.png "Snapshot")
+
+Pengaturan virtual machine sebagai guest telah selesai. Selanjutkan, kita akan melakukan konfigurasi cuckoo agar menjalankan virtual machine yang telah dibuat untuk proses analisa.
+
 
