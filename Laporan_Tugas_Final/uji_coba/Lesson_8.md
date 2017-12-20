@@ -1,7 +1,7 @@
 # Lesson 8 : SQL Injection Union Exploit #1
 
-## Start Web Browser Session to Multillidae
-- Buka browser kemudian akses Multillidae sesuai ip metasploit pada alamat http://10.0.1.100/mutillidae
+## Start Web Browser Session to Mutillidae
+- Buka browser kemudian akses Mutillidae sesuai ip metasploit pada alamat http://10.0.1.100/mutillidae
 ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_6/1/start_browser.png "Home page")
 
 ## Go To User Info Page

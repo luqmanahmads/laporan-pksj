@@ -1,8 +1,8 @@
-# Konfigurasi Multillidae
+# Konfigurasi Mutillidae
 
-- Buka konfigurasi multillidae yang ada pada metasploit
-- Ketikkan `nano /var/www/multilidae/config.inc`
-- Default configurasi pada multillidae adalah seperti berikut:
+- Buka konfigurasi mutillidae yang ada pada metasploit
+- Ketikkan `nano /var/www/mutillidae/config.inc`
+- Default configurasi pada mutillidae adalah seperti berikut:
 ```php
 <?php
     /* NOTE: On Samurai, the $dbpass password is "samurai" rather than blank */
