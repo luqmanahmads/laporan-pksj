@@ -143,3 +143,47 @@ sudo pip install -U cuckoo
 Coba jalankan Cuckoo dengan command `cuckoo`.
 Cuckoo yang sedang berjalan akan tampak pada gambar berikut.
 ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/cuckoo/1.png "Cuckoo")
+
+#### C. Membuat Virtual Machine sebagai Guest
+
+Cuckoo memerlukan paling tidak terdapat 1 guest untuk dapat melakukan analisa.
+Untuk menginstall virtualbox, ketikkan command berikut.
+
+```
+apt-get install linux-headers-`uname -r` libvpx1
+sudo apt-get install vitualbox
+```
+
+Karena konfigurasi default cuckoo menggunakan IP address 192.168.56.1 yang dimiliki oleh VirtualBox, kita perlu membuat networking insterface.
+
+```
+VBoxManage hostonlyif create
+ip link set vboxnet0 up
+ip addr add 192.168.56.1/24 dev vboxnet0
+```
+
+Buat virtual machine baru, atur memory dan jenis os dan harddisk dengan command berikut
+
+```
+VBoxManage createvm --name "WindowsXPSP3" --register
+VBoxManage modifyvm "WindowsXPSP3" --memory 256 --acpi off --boot1 dvd
+VBoxManage modifyvm "WindowsXPSP3" --ostype WindowsXP
+VBoxManage createhd --filename windowsxpsp3.vdi --size 10000
+```
+
+definikan file harddisk dan file iso instalasi Windows XP yang akan digunakan.
+
+```
+BoxManage storagectl "WindowsXPSP3" --name "IDE Controller" --add ide
+VBoxManage storageattach "WindowsXPSP3" --storagectl "IDE Controller" --port 0 --device 0 --type hdd --medium windowsxpsp3.vdi
+VBoxManage storageattach "WindowsXPSP3" --storagectl "IDE Controller" --port 1 --device 0 --type dvddrive --medium windowsxpsp3.iso
+VBoxManage modifyvm "WindowsXPSP3" --vrde on
+``` 
+
+Jalankan virtualbox dengan command berikut, dan lakukan instalasi Windows XP
+
+```
+VBoxManage startvm "WindowsXPSP3"
+```
+Windows XP yang telah terinstall akan tampak pada gambar berikut.
+![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/cuckoo/2.png "Windows")
