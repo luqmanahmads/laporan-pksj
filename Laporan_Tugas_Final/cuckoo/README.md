@@ -131,5 +131,15 @@ python setup.py build
 python setup.py install
 ```
 
-
 #### B. Installing Cuckoo
+
+Untuk menginstall cuckoo, pastikan pip dan setuptools telah terupdate. Kemudian instalasi cuckoo menggunakan pip.
+
+```
+sudo pip install -U pip setuptools
+sudo pip install -U cuckoo
+```
+
+Coba jalankan Cuckoo dengan command `cuckoo`.
+Cuckoo yang sedang berjalan akan tampak pada gambar berikut.
+![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/cuckoo/1.png "Cuckoo")
