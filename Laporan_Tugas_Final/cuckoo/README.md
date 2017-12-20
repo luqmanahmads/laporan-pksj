@@ -142,6 +142,7 @@ sudo pip install -U cuckoo
 
 Coba jalankan Cuckoo dengan command `cuckoo`.
 Cuckoo yang sedang berjalan akan tampak pada gambar berikut.
+
 ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/cuckoo/1.png "Cuckoo")
 
 #### C. Membuat Virtual Machine sebagai Guest
@@ -186,4 +187,17 @@ Jalankan virtualbox dengan command berikut, dan lakukan instalasi Windows XP
 VBoxManage startvm "WindowsXPSP3"
 ```
 Windows XP yang telah terinstall akan tampak pada gambar berikut.
+
 ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/cuckoo/2.png "Windows")
+
+Pada virtual machine Windows lakukan download python melalui website nya https://www.python.org/downloads/ dan instal.
+Cek instalasi python.
+
+![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/cuckoo/3.png "Python Install")
+
+Agar proses analisa berjalan lancar, Pastikan Windows Firewall dan Automatic Updates mati.
+
+![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/cuckoo/4.png "Python Install")
+
+Kemudian copykan file agent/agent.py dari 
+
