@@ -11,7 +11,7 @@
 
 ## SQL Injection (Refresher Union Examples)
 1. Inspect the Name Textbox
-   - Klik kanan pada textbox Name, kemudian inspect element
+   - Klik kanan pada textbox **Name**, kemudian inspect element
 ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_8/inspect.png "Home page")
 2. Change Text Box Size
    - Pada bagian size, tambahkan kapasistasnya dari yg semula 20 menjadi **100**

