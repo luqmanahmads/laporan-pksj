@@ -68,26 +68,32 @@
 1. Place the following URL in the Address Bar
 	- Buka url berikut pada browser 
 		http://10.0.1.100/mutillidae/upload_file.php
+  ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_11/upload_page.png "Home page")
 	- Klik tombol Browse
 	- Cari file c99.php pada folder /root/backdoor
+  ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_11/browse_file.png "Home page")
 	- Klik tombol Open
 	- Klik tombol Submit Query
+  ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_11/upload_file.png "Home page")
 
 ## Using c99:php's to grab database password
 1. Server security information
 	- Buka url berikut pada browser 
 		http://10.0.1.100/mutillidae/c99.php
+  ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_11/c99_page.png "Home page")
 	- Klik link navigasi Sec
-
+  ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_11/sec_page.png "Home page")
 2. Discover Mutillidae Application Directory
 	- Isikan "pwd" pada textbox sebelah kiri paling atas
 	- Klik Execute
+  ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_11/sec_pwd.png "Home page")
 3. Search php scripts for the string password
-	- Isikan `find /var/www/mutillidae -name "*.inc" | xargs grep -i "dn" | grep "="` pada kalom kedua
+	- Isikan `find /var/www/mutillidae -name "*.inc" | xargs grep -i "db" | grep "="` pada kalom kedua
 	- Klik Execute
+  ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_11/grep_db.png "Home page")
 4. Viewing Password Results
-    - Pada textbox pertama akan tampil hasil dari eksekusi command
-
+   - Pada textbox pertama akan tampil hasil dari eksekusi command
+   ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_11/result_grep.png "Home page")
 
 ## Using c99:php's to examine pillage the database
 1. Connect to SQL
@@ -99,48 +105,58 @@
    Database: owasp10
    ```
    - Klik tombol Connect
+   ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_11/connect_db.png "Home page")
 2. Select table accounts
-	- Select tabel account pada database owasp10
+	 - Select tabel account pada database owasp10
+   ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_11/db_result.png "Home page")
 3. Insert Record Link
-	- Klik link Insert 
+	 - Klik link Insert 
+   ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_11/account_result.png "Home page")
 4. Supply New User Information
    - Isikan pada textbox
-```
-cid Value: 20
-username Value: hacker
-password Value: hacker
-mysignature: Noob
-is_admin: TRUE
-```
+   ```
+   cid Value: 20
+   username Value: hacker
+   password Value: hacker
+   mysignature: Noob
+   is_admin: TRUE
+   ```
    - Klik tombol Confirm
+   ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_11/add_user.png "Home page")
 5. Insert New User Information
    - Klik tombol Yes
+  ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_11/confirm_add_db.png "Home page")
 6. Verify New User Information
    - Scroll kebawah untu melihat hasil
    - Veifikasi jika user hacker sudah dibuat
+   ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_11/verifikasi_result.png "Home page")
 7. Prepare to Dump the Accounts Table
    - Scroll keatas
    - Klik link Dump
+   ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_11/dump_link.png "Home page")
 8. Dump the Accounts Table
    - Isikan pada textbox
-```
-  DB: owasp10
-  Only tables (explode ";"): accounts
-  File: ./dump_owasp10_accounts.sql
-  Download Checkbox: Check it
-  Save to file Checkbox: Check it
-```
+   ```
+   DB: owasp10
+   Only tables (explode ";"): accounts
+   File: ./dump_owasp10_accounts.sql
+   Download Checkbox: Check it
+   Save to file Checkbox: Check it
+   ```
    - Klik tombol Dump
-9. Save Accounts Dump File (Part 1)
+   ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_11/add_dump.png "Home page")
+9. Save Accounts Dump File
    - Pilih Save File
+   ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_11/save_dump.png "Home page")
 
 ## Proof of Lab
 1. View Result
-- Buka terminal
-- Pindah direktori ke folder Downloads `cd Downloads`
-- Jalankan perintah berikut
-```
-grep -i hacker dump_owasp10_accounts.sql
-date
-echo "Hendri F"
-```
+   - Buka terminal
+   - Pindah direktori ke folder Downloads `cd Downloads`
+   - Jalankan perintah berikut
+   ```bash
+   grep -i hacker dump_owasp10_accounts.sql
+   date
+   echo "Hendri F"
+   ```
+   ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_11/proof_lab.png "Home page")
