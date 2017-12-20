@@ -27,7 +27,7 @@
 4. Viewing the Results
 	- Scroll kebawah untuk melihat hasilnya
 	- Perhatikan hasilnya
-![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_8/result_union_2.png "Home page")
+![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_9/result_union_2.png "Home page")
 
 ## Using the Backdoor for Basic Reconnaissance
 1. Initial Reconnaissance
