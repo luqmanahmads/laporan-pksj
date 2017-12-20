@@ -1,6 +1,18 @@
-# Konfigurasi Mutillidae
+# Ubah Settingan Database
+- Buka terminal pada metasploit
+- Ubah password database mysql menjadi **saitama** dengan mengetikkan perintah-perintah berikut
+```
+mysql -u root -p
+use mysql;
+update user set password=PASSWORD('saitama') where User='root';
+flush privileges;
+quit
+```
+- Restart mysql dengan menggunakan perintah `sudo /etc/init.d/mysql restart`
 
-- Buka konfigurasi mutillidae yang ada pada metasploit
+
+# Konfigurasi Database Mutillidae
+- Buka konfigurasi databases pada mutillidae yang ada pada metasploit
 - Ketikkan `nano /var/www/mutillidae/config.inc`
 - Default configurasi pada mutillidae adalah seperti berikut:
 ```php
@@ -20,7 +32,7 @@
 
     $dbhost = '0.0.0.0';
     $dbuser = 'root';
-    $dbpass = '';
+    $dbpass = 'saitama';
     $dbname = 'owasp10';
 ?>
 ```

