@@ -35,9 +35,9 @@
    - Pilih tab proxy, kemudian options
    - Set port ke 8080 seperti berikut
 ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_6/2/proxy_port_8080.png "Home page")
-3. Turn on intercept
+3. Turn off intercept
    - Pilih tab intercept
-   - Pastikan intercept button dalam keadaan off (**intercept is off**)
+   - Pastikan intercept button dalam keadaan off (**intercept is off**), jika dalam keadaan on maka set ke off
 ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_6/2/intercept_off.png "Home page")
 
 ## SQL Injection (Union Example #1)
@@ -60,7 +60,7 @@
 
 ## SQL Injection (Union Example #2)
 1. Inspect the Name Textbox
-   - Klik kanan pada Textbox Name, kemudian inspect element
+   - Klik kanan pada textbox **Name**, kemudian inspect element
 ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_8/inspect.png "Home page")
 2. Change Text Box Size
    - Pada bagian size, tambahkan kapasistasnya dari yg semula 20 menjadi 100
@@ -77,13 +77,13 @@
 
 ## SQL Injection (Union Example #3)
 1. Inspect the Name Textbox
-   - Klik kanan pada textbox Name, kemudian inspect element
+   - Klik kanan pada textbox **Name**, kemudian inspect element
 ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_8/inspect.png "Home page")
 2. Change Text Box Size
    - Pada bagian size, tambahkan kapasistasnya dari yg semula 20 menjadi 100
 ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_8/change_size.png "Home page")
 3. Second Union SQL Injection Attempt
-   - Pada kolom Textbox **Name** isikan **`' union select 1,2,3,4,5 -- `**
+   - Pada kolom textbox **Name** isikan **`' union select 1,2,3,4,5 -- `**
    - Pastikan anda menambahkan spasi setelah karakter **`--`**
    - Klik tombol View Account Details
 ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_8/union_3.png "Home page")
@@ -97,14 +97,14 @@
 ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_8/result_2.png "Home page")
 
 ## SQL Injection (Union Example #4)
-1. Inspect the Name Textbox with Firebug
-   - Klik kanan pada Textbox Name, kemudian inspect element
+1. Inspect the Name Textbox
+   - Klik kanan pada textbox **Name**, kemudian inspect element
 ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_8/inspect.png "Home page")
 2. Change Text Box Size
    - Pada bagian size, tambahkan kapasistasnya dari yg semula 20 menjadi 100
 ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_8/change_size.png "Home page")
 3. Second Union SQL Injection Attempt
-   - Pada kolom Textbox **Name** isikan **`' union select ccid,ccnumber,ccv,expiration,null from credit_cards -- `**
+   - Pada kolom textbox **Name** isikan **`' union select ccid,ccnumber,ccv,expiration,null from credit_cards -- `**
    - Pastikan anda menambahkan spasi setelah karakter **`--`**
    - Klik tombol View Account Details
 ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_8/union_4.png "Home page")

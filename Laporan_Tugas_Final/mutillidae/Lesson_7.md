@@ -37,7 +37,7 @@
 ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_6/2/proxy_port_8080.png "Home page")
 3. Turn off intercept
    - Pilih tab intercept
-   - Pastikan intercept button dalam keadaan off (**intercept is off**)
+   - Pastikan intercept button dalam keadaan off (**intercept is off**), jika dalam keadaan on maka set ke off
 ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_6/2/intercept_off.png "Home page")
 
 ## SQL Injection: Obtain Userlist (Method #1)
