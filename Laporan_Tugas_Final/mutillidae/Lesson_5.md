@@ -5,7 +5,7 @@
 ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_5/1/home_multillidae.png "Home page")
 
 ## SQL Injection: Single Quote Test On Username Field
-1. Buka halaman Login/Register
+1. Buka halaman **Login/Register**
 2. Set Security Level menjadi **level 0 (Hosed)**
 3. Tes penggunaan Single Qoute (')  
    - Pada kolom textbox **Name** isikan single quote ('), lalu klik tombol login
@@ -26,7 +26,7 @@
 1. Login Tanpa Menggunakan Password
    - Pada kolom textbox **Name** isikan **`' or 1=1 -- `**
    - Pastikan anda menambahkan spasi setelah karakter **`--`**
-   - Klik tombol Login
+   - Klik tombol **Login**
 ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_5/tambahan/login_tanpa_pass.png "Test single quote")
 2. Verifikasi Result
    - Perhatikan anda login sebagai apa. Berdasarkan desain code multillade, anda akan login sebagai admin. Hal tersebut terjadi karena admin merupakan user pertama yang ada pada tabel accounts
@@ -41,7 +41,7 @@
 
 ## SQL Injection: Single Quote Test On Password Field
 1. Inspect Password Box Element
-   - Buka halaman Login/Register
+   - Buka halaman **Login/Register**
    - Pada kolom textbox **Name** isikan samurai 
    - Pada kolom textbox **Password** klik kanan, kemudian inspect element
 ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_5/tambahan/inspect_element.png "Test single quote")
@@ -64,7 +64,7 @@
 
 ## SQL Injection: Single Quote Test On Password Field (Obtain Access #2)
 1. Inspect Password Box Element
-   - Buka halaman Login/Register
+   - Buka halaman **Login/Register**
    - Pada kolom textbox **Name** isikan **samurai**
    - Pada kolom textbox **Password** klik kanan, kemudian inspect element
 ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_5/tambahan/inspect_element.png "Test single quote")
@@ -73,7 +73,7 @@
 3. Berikan Kondisi Selalu True pada kolom extbox Password
    - Pada kolom textbox **Password** isikan **`' or 1=1 -- `**
    - Pastikan anda menambahkan spasi setelah karakter **`--`**
-   - Klik tombol Login
+   - Klik tombol **Login**
 ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_5/2/replace_with_string.png "True condition")
 4. Verifikasi Result
    - Berdasarkan desain code mutillade, anda akan login sebagai admin. Hal tersebut terjadi karena admin merupakan user pertama yang ada pada tabel accounts
@@ -82,17 +82,17 @@
 
 ## SQL Injection: Single Quote Test On Password Field (Obtain Access #3)
 1. Inspect Password Box Element
-   - Buka halaman Login/Register
+   - Buka halaman **Login/Register**
    - Pada kolom textbox **Name** isikan **samurai**
    - Pada kolom textbox **Password** klik kanan, kemudian inspect element
 ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_5/tambahan/inspect_element.png "Test single quote")
 2. Edit Password Box Element
    - Replace string password menjadi text
-   - Pada bagian size dan maxlength tambahkan kapasistasnya dari yg semula 20 menjadi 50
+   - Pada bagian **size** dan **maxlength** tambahkan kapasistasnya dari yg semula **20** menjadi **50**
 3. Berikan Kondisi Selalu True pada kolom Textbox Password
    - Pada kolom textbox **Password** isikan **`' or (1=1 and username='samurai')--`**
    - Pastikan anda menambahkan spasi setelah karakter **`--`**
-   - Klik tombol Login
+   - Klik tombol **Login**
 ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_5/3/login_as_samurai.png "True condition")
 4. Verifikasi Result
    - Anda akan login sebagai samurai

